@@ -114,11 +114,9 @@ export default function SavedQuests() {
                       <MapPin className="w-4 h-4 text-rose-400" />
                       <span className="truncate max-w-[150px]">{quest.formatted_address}</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <Calendar className="w-4 h-4 text-rose-400" />
-                      <span>
-                        {new Date(quest.start_date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
-                      </span>
+                    <div className="flex items-center gap-1.5 text-emerald-400">
+                      <Calendar className="w-4 h-4 text-emerald-400" />
+                      <span className="font-semibold">Open Now</span>
                     </div>
                   </div>
 

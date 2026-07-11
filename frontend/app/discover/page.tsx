@@ -315,9 +315,9 @@ export default function Discover() {
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4 text-rose-450 shrink-0" />
                       <div>
-                        <span className="text-[10px] text-slate-500 block">DATE</span>
-                        <span className="text-xs font-semibold text-slate-200">
-                          {new Date(currentCard.start_date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
+                        <span className="text-[10px] text-slate-500 block">APPLICATIONS</span>
+                        <span className="text-xs font-semibold text-emerald-400">
+                          Open Now
                         </span>
                       </div>
                     </div>
