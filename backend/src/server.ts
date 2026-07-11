@@ -1478,6 +1478,8 @@ app.listen(port, () => {
   seedDatabaseIfNeeded();
 });
 
+export default app;
+
 setInterval(() => {
   console.log('[CRON] Running 30-minute opportunity update cycle...');
 
