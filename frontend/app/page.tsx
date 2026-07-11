@@ -1,7 +1,7 @@
 'use strict';
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { MapPin, DollarSign, Compass, ArrowRight, Sparkles } from 'lucide-react';
 
@@ -46,6 +46,11 @@ export default function Onboarding() {
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [userId, setUserId] = useState('019535d9-3df7-79fb-b466-fa907fa17f9e'); // Default test user ID
   const [educationLevel, setEducationLevel] = useState('Undergrad');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleInterest = (interest: string) => {
     if (selectedInterests.includes(interest)) {
@@ -192,7 +197,7 @@ export default function Onboarding() {
               Select Primary Interests
             </label>
             <div className="grid grid-cols-2 gap-2 max-h-56 overflow-y-auto p-2.5 bg-slate-950 rounded-xl border border-slate-800 custom-scrollbar">
-              {availableInterests.map((interest) => {
+              {mounted && availableInterests.map((interest) => {
                 const selected = selectedInterests.includes(interest);
                 return (
                   <button
