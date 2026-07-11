@@ -70,225 +70,405 @@ function generateMockVector(text: string): number[] {
 }
 
 // Pre-seeded Mock database store representing side_quests and user_interactions
-const fieldsData = [
+const realQuestsData = [
   {
     field: 'Artificial Intelligence',
     tag: 'AI',
-    companies: [
-      { name: 'OpenAI Research', url: 'https://openai.com/careers/' },
-      { name: 'Google DeepMind', url: 'https://deepmind.google/about/careers/' },
-      { name: 'Anthropic AI', url: 'https://www.anthropic.com/careers' },
-      { name: 'Cohere AI', url: 'https://cohere.com/careers' },
-      { name: 'Mistral AI', url: 'https://mistral.ai/jobs/' }
+    quests: [
+      {
+        title: 'OpenAI Residency Program',
+        organizer: 'OpenAI',
+        lifecycle_type: 'fellowship',
+        url: 'https://openai.com/residency/',
+        summary: 'The OpenAI Residency is a program designed for researchers and engineers transitioning into AI from other technical fields.'
+      },
+      {
+        title: 'Google Summer of Code - TensorFlow AI Projects',
+        organizer: 'Google Open Source',
+        lifecycle_type: 'internship',
+        url: 'https://summerofcode.withgoogle.com/',
+        summary: 'Contribute to open-source machine learning frameworks like TensorFlow and Keras under expert Google developer mentorship.'
+      }
     ]
   },
   {
     field: 'Software & Programming',
     tag: 'Coding',
-    companies: [
-      { name: 'GitHub Engineering', url: 'https://github.com/about/careers' },
-      { name: 'Microsoft Developer Division', url: 'https://careers.microsoft.com/' },
-      { name: 'Vercel Labs', url: 'https://vercel.com/careers' },
-      { name: 'Stripe Platform Team', url: 'https://stripe.com/jobs' },
-      { name: 'Amazon Web Services', url: 'https://aws.amazon.com/careers/' }
+    quests: [
+      {
+        title: 'MLH Summer Developer Fellowship',
+        organizer: 'Major League Hacking',
+        lifecycle_type: 'fellowship',
+        url: 'https://fellowship.mlh.io/',
+        summary: 'A 12-week educational program where students contribute to open-source software projects used globally.'
+      },
+      {
+        title: 'Outreachy Open Source Software Internship',
+        organizer: 'Software Freedom Conservancy',
+        lifecycle_type: 'internship',
+        url: 'https://www.outreachy.org/',
+        summary: 'A remote internship program promoting diversity in tech by funding candidates to work on open-source projects.'
+      }
     ]
   },
   {
     field: 'Entrepreneurship',
     tag: 'Startup',
-    companies: [
-      { name: 'Y Combinator', url: 'https://www.ycombinator.com/apply/' },
-      { name: 'Antler India', url: 'https://www.antler.co/careers' },
-      { name: 'Sequoia Capital', url: 'https://www.sequoiacap.com/' },
-      { name: 'Matrix Partners', url: 'https://www.matrixpartners.com/' },
-      { name: 'Kalaari Capital', url: 'https://www.kalaari.com/' }
+    quests: [
+      {
+        title: 'Y Combinator Summer Startup Incubator',
+        organizer: 'Y Combinator',
+        lifecycle_type: 'hackathon',
+        url: 'https://www.ycombinator.com/apply/',
+        summary: 'YC invests $500k in twice-yearly batches of startups, providing intensive mentorship, pitch training, and demo day access.'
+      },
+      {
+        title: 'Thiel Fellowship for Young Founders',
+        organizer: 'Thiel Foundation',
+        lifecycle_type: 'fellowship',
+        url: 'https://thielfellowship.org/',
+        summary: 'A two-year program offering $100,000 to young creators who want to build new things instead of sitting in a classroom.'
+      }
     ]
   },
   {
     field: 'Business & Management',
     tag: 'Business',
-    companies: [
-      { name: 'McKinsey & Company', url: 'https://www.mckinsey.com/careers' },
-      { name: 'Boston Consulting Group', url: 'https://www.bcg.com/careers' },
-      { name: 'Bain & Company', url: 'https://www.bain.com/careers/' },
-      { name: 'Tata Administrative Services', url: 'https://www.tata.com/careers' },
-      { name: 'Reliance Industries', url: 'https://www.relianceindustries.com/' }
+    quests: [
+      {
+        title: 'McKinsey Business Analyst Intern Program',
+        organizer: 'McKinsey & Company',
+        lifecycle_type: 'internship',
+        url: 'https://www.mckinsey.com/careers',
+        summary: 'Work directly with client teams on core strategic problems, learning McKinsey consulting methodologies and frameworks.'
+      },
+      {
+        title: 'BCG Associate Strategic Consulting Program',
+        organizer: 'Boston Consulting Group',
+        lifecycle_type: 'internship',
+        url: 'https://www.bcg.com/careers',
+        summary: 'Gain exposure to corporate strategy, operations, and business transformation projects under senior BCG advisors.'
+      }
     ]
   },
   {
     field: 'Finance & Investing',
     tag: 'Finance',
-    companies: [
-      { name: 'Goldman Sachs', url: 'https://www.goldmansachs.com/careers' },
-      { name: 'JPMorgan Chase', url: 'https://careers.jpmorganchase.com' },
-      { name: 'Zerodha Tech', url: 'https://zerodha.com/careers' },
-      { name: 'Paytm Financials', url: 'https://paytm.com/careers' },
-      { name: 'BlackRock India', url: 'https://www.blackrock.com/corporate/careers' }
+    quests: [
+      {
+        title: 'Goldman Sachs Summer Analyst Internship',
+        organizer: 'Goldman Sachs',
+        lifecycle_type: 'internship',
+        url: 'https://www.goldmansachs.com/careers',
+        summary: 'An eight-to-ten week internship offering division-specific training in investment banking, global markets, or asset management.'
+      },
+      {
+        title: 'J.P. Morgan Investment Banking Program',
+        organizer: 'J.P. Morgan',
+        lifecycle_type: 'internship',
+        url: 'https://careers.jpmorganchase.com',
+        summary: 'Analyze market trends, assist with financial modeling, and support execution of major M&A transactions.'
+      }
     ]
   },
   {
     field: 'Data Science & Analytics',
     tag: 'Data',
-    companies: [
-      { name: 'Snowflake Analytics', url: 'https://www.snowflake.com/careers/' },
-      { name: 'Databricks India', url: 'https://www.databricks.com/company/careers' },
-      { name: 'Mu Sigma', url: 'https://www.mu-sigma.com/' },
-      { name: 'Fractal Analytics', url: 'https://fractal.ai/careers/' },
-      { name: 'Palantir Technologies', url: 'https://www.palantir.com/careers/' }
+    quests: [
+      {
+        title: 'Kaggle Machine Learning Competitions',
+        organizer: 'Kaggle',
+        lifecycle_type: 'hackathon',
+        url: 'https://www.kaggle.com/competitions',
+        summary: 'Compete on real-world datasets to build predictive models, earn prize money, and rank on the global leaderboard.'
+      },
+      {
+        title: 'Databricks University Alliance Certification',
+        organizer: 'Databricks',
+        lifecycle_type: 'workshop',
+        url: 'https://www.databricks.com/',
+        summary: 'Free training and certifications in Spark, data engineering, and lakehouse architectures for university students.'
+      }
     ]
   },
   {
     field: 'Design & Creativity',
     tag: 'Design',
-    companies: [
-      { name: 'Figma Design Lab', url: 'https://www.figma.com/careers/' },
-      { name: 'Canva Creative', url: 'https://www.canva.com/careers/' },
-      { name: 'Adobe Design Team', url: 'https://www.adobe.com/careers.html' },
-      { name: 'Razorpay Design', url: 'https://razorpay.com/jobs/' },
-      { name: 'Zomato Design Team', url: 'https://www.zomato.com/careers' }
+    quests: [
+      {
+        title: 'Figma Config Design Conference',
+        organizer: 'Figma',
+        lifecycle_type: 'event',
+        url: 'https://config.figma.com/',
+        summary: 'Figma\'s annual global conference showcasing the future of design systems, developer handoff tools, and product design.'
+      },
+      {
+        title: 'Interaction Design Foundation UX/UI Certifications',
+        organizer: 'Interaction Design Foundation',
+        lifecycle_type: 'workshop',
+        url: 'https://www.interaction-design.org/',
+        summary: 'Acquire globally recognized certifications in user research, wireframing, usability testing, and UI design.'
+      }
     ]
   },
   {
     field: 'Media & Content Creation',
     tag: 'Media',
-    companies: [
-      { name: 'Netflix Creative Hub', url: 'https://jobs.netflix.com/' },
-      { name: 'T-Series Digital', url: 'https://www.tseries.com/' },
-      { name: 'Pocket Aces', url: 'https://www.pocketaces.in/' },
-      { name: 'Prasar Bharati', url: 'https://prasarbharati.gov.in/' },
-      { name: 'NDTV Media Labs', url: 'https://www.ndtv.com/' }
+    quests: [
+      {
+        title: 'YouTube Creator Academy Program',
+        organizer: 'YouTube',
+        lifecycle_type: 'workshop',
+        url: 'https://creatoracademy.youtube.com/',
+        summary: 'Learn channel growth strategies, audience analytics, production techniques, and monetization policies directly from YouTube.'
+      },
+      {
+        title: 'Adobe Creative Residency Program',
+        organizer: 'Adobe',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.adobe.com/',
+        summary: 'Fully funded residency giving creators the time and resources to work on personal passion projects using Creative Cloud.'
+      }
     ]
   },
   {
     field: 'Marketing & Branding',
     tag: 'Marketing',
-    companies: [
-      { name: 'Hindustan Unilever', url: 'https://www.hul.co.in/careers/' },
-      { name: 'Coca-Cola India', url: 'https://www.coca-colaindia.com/' },
-      { name: 'Ogilvy & Mather', url: 'https://www.ogilvy.com/careers' },
-      { name: 'Dentsu Creative', url: 'https://www.dentsu.com/' },
-      { name: 'Nykaa Marketing', url: 'https://www.nykaa.com/' }
+    quests: [
+      {
+        title: 'Google APMM Marketing Program',
+        organizer: 'Google',
+        lifecycle_type: 'internship',
+        url: 'https://buildyourfor.google/programs/apmm/',
+        summary: 'A rotational program designed to kickstart marketing careers, working on product messaging, brand campaigns, and growth marketing.'
+      },
+      {
+        title: 'HubSpot Academy Digital Marketing Certification',
+        organizer: 'HubSpot',
+        lifecycle_type: 'workshop',
+        url: 'https://academy.hubspot.com/',
+        summary: 'A free, structured course covering search engine optimization, content strategy, email marketing, and conversion optimization.'
+      }
     ]
   },
   {
     field: 'Policy Making & Governance',
     tag: 'Policy',
-    companies: [
-      { name: 'Centre for Policy Research', url: 'https://cprindia.org/careers/' },
-      { name: 'NITI Aayog Outreach', url: 'https://www.niti.gov.in/' },
-      { name: 'Observer Research Foundation', url: 'https://www.orfonline.org/careers/' },
-      { name: 'LAMP Fellowship Secretariat', url: 'https://prsindia.org/lamp' },
-      { name: 'IIPA Delhi', url: 'https://www.iipa.org.in/' }
+    quests: [
+      {
+        title: 'LAMP Legislative Assistant Fellowship',
+        organizer: 'PRS Legislative Research',
+        lifecycle_type: 'fellowship',
+        url: 'https://prsindia.org/lamp',
+        summary: 'An intensive fellowship in Delhi mentoring young graduates to assist Members of Parliament with legislative research and policy reviews.'
+      },
+      {
+        title: 'NITI Aayog Policy & Governance Internship',
+        organizer: 'NITI Aayog',
+        lifecycle_type: 'internship',
+        url: 'https://www.niti.gov.in/internship',
+        summary: 'Work directly with NITI Aayog verticals on public policy formulations, rural development metrics, and state coordination.'
+      }
     ]
   },
   {
     field: 'Law & Justice',
     tag: 'Law',
-    companies: [
-      { name: 'Vidhi Legal Policy', url: 'https://vidhilegalpolicy.in/careers/' },
-      { name: 'NLUD Legal Aid', url: 'https://nludelhi.ac.in/' },
-      { name: 'PUCL India', url: 'https://pucl.org/' },
-      { name: 'Legal Aid Society', url: 'https://www.legalaid.gov.in/' },
-      { name: 'Shardul Amarchand Mangaldas', url: 'https://www.samlegal.com/' }
+    quests: [
+      {
+        title: 'Vidhi Legal Policy Research Internship',
+        organizer: 'Vidhi Centre for Legal Policy',
+        lifecycle_type: 'internship',
+        url: 'https://vidhilegalpolicy.in/careers/',
+        summary: 'Conduct legal research, draft policy briefs, and analyze public legislation at Vidhi\'s New Delhi office.'
+      },
+      {
+        title: 'Supreme Court of India Law Clerkship',
+        organizer: 'Supreme Court of India',
+        lifecycle_type: 'fellowship',
+        url: 'https://main.sci.gov.in/',
+        summary: 'Assist Hon\'ble Judges of the Supreme Court with case briefs, legal analysis, research, and court room preparation.'
+      }
     ]
   },
   {
     field: 'Healthcare & Medicine',
     tag: 'Healthcare',
-    companies: [
-      { name: 'AIIMS Delhi Research', url: 'https://www.aiims.edu/' },
-      { name: 'Fortis Healthcare', url: 'https://www.fortishealthcare.com/' },
-      { name: 'Max Hospital Research', url: 'https://www.maxhealthcare.in/' },
-      { name: 'Biocon Labs', url: 'https://www.biocon.com/' },
-      { name: 'Serum Institute', url: 'https://www.seruminstitute.com/' }
+    quests: [
+      {
+        title: 'WHO Public Health Internship Program',
+        organizer: 'World Health Organization',
+        lifecycle_type: 'internship',
+        url: 'https://www.who.int/careers/internships',
+        summary: 'Gain practical experience in global health policy, disease prevention campaigns, and healthcare data compilation.'
+      },
+      {
+        title: 'AIIMS Medical & Biotech Research Fellowship',
+        organizer: 'AIIMS New Delhi',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.aiims.edu/',
+        summary: 'Participate in medical laboratory projects, clinical trials analysis, or health system policy research at AIIMS.'
+      }
     ]
   },
   {
     field: 'Science & Research',
     tag: 'Science',
-    companies: [
-      { name: 'IISc Bangalore Labs', url: 'https://iisc.ac.in/' },
-      { name: 'TIFR Mumbai', url: 'https://www.tifr.res.in/' },
-      { name: 'CSIR India', url: 'https://www.csir.res.in/' },
-      { name: 'NPL Delhi', url: 'https://www.nplindia.org/' },
-      { name: 'JNU Physical Sciences', url: 'https://www.jnu.ac.in/sps' }
+    quests: [
+      {
+        title: 'CERN Summer Student Program',
+        organizer: 'CERN',
+        lifecycle_type: 'internship',
+        url: 'https://careers.cern/summer',
+        summary: 'Work on experimental physics, computing, or engineering projects at the Large Hadron Collider in Geneva, Switzerland.'
+      },
+      {
+        title: 'IAS Summer Research Fellowship (SRFP)',
+        organizer: 'Indian Academy of Sciences',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.ias.ac.in/',
+        summary: 'A fully funded two-month research fellowship placing students with leading scientists in research institutions across India.'
+      }
     ]
   },
   {
     field: 'Climate & Sustainability',
     tag: 'Sustainability',
-    companies: [
-      { name: 'TERI India', url: 'https://www.teriin.org/' },
-      { name: 'CSE Delhi', url: 'https://www.cseindia.org/' },
-      { name: 'WWF India', url: 'https://www.wwfindia.org/' },
-      { name: 'Greenpeace India', url: 'https://www.greenpeace.org/india/' },
-      { name: 'WRI India', url: 'https://wri-india.org/' }
+    quests: [
+      {
+        title: 'UNEP Environmental Policy Internship',
+        organizer: 'United Nations Environment Programme',
+        lifecycle_type: 'internship',
+        url: 'https://www.unep.org/',
+        summary: 'Support UNEP initiatives on biodiversity conservation, climate adaptation policies, and circular economy research.'
+      },
+      {
+        title: 'CSE Environmental Communications Program',
+        organizer: 'Centre for Science and Environment',
+        lifecycle_type: 'workshop',
+        url: 'https://www.cseindia.org/',
+        summary: 'A short-term course on environmental journalism, climate justice, air pollution reporting, and green advocacy.'
+      }
     ]
   },
   {
     field: 'Space & Aerospace',
     tag: 'Space',
-    companies: [
-      { name: 'ISRO Space Applications', url: 'https://www.isro.gov.in/' },
-      { name: 'DRDO Labs', url: 'https://www.drdo.gov.in/' },
-      { name: 'Skyroot Aerospace', url: 'https://www.skyroot.in/' },
-      { name: 'Pixxel Space', url: 'https://www.pixxel.space/' },
-      { name: 'Agnikul Cosmos', url: 'https://agnikul.in/' }
+    quests: [
+      {
+        title: 'ISRO Space Science Training Program',
+        organizer: 'ISRO',
+        lifecycle_type: 'workshop',
+        url: 'https://www.isro.gov.in/',
+        summary: 'Learn principles of satellite remote sensing, celestial mechanics, and launch vehicle dynamics from ISRO engineers.'
+      },
+      {
+        title: 'NASA International Internship Program',
+        organizer: 'NASA',
+        lifecycle_type: 'internship',
+        url: 'https://www.nasa.gov/careers/',
+        summary: 'A prestigious internship placing international students in NASA research centers to work on space exploration projects.'
+      }
     ]
   },
   {
     field: 'Cybersecurity',
     tag: 'Cybersecurity',
-    companies: [
-      { name: 'DSCI India', url: 'https://www.dsci.in/' },
-      { name: 'CERT-In Outreach', url: 'https://www.cert-in.org.in/' },
-      { name: 'Quick Heal Labs', url: 'https://www.quickheal.co.in/' },
-      { name: 'TAC Security', url: 'https://tacsecurity.com/' },
-      { name: 'CrowdStrike India', url: 'https://www.crowdstrike.com/' }
+    quests: [
+      {
+        title: 'Google Cybersecurity Professional Program',
+        organizer: 'Google',
+        lifecycle_type: 'workshop',
+        url: 'https://grow.google/certificates/cybersecurity/',
+        summary: 'A hands-on professional certificate covering network security, threat detection, Python scriptings, and SQL.'
+      },
+      {
+        title: 'SANS CyberStart Hacking Challenge',
+        organizer: 'SANS Institute',
+        lifecycle_type: 'hackathon',
+        url: 'https://www.sans.org/',
+        summary: 'A gamified cybersecurity competition teaching vulnerability analysis, password cracking, and forensics.'
+      }
     ]
   },
   {
     field: 'Gaming & Interactive Media',
     tag: 'Gaming',
-    companies: [
-      { name: 'Nazara Technologies', url: 'https://www.nazara.com/' },
-      { name: 'Dream11 Gaming', url: 'https://www.sportzinteractive.net/' },
-      { name: 'JetSynthesys', url: 'https://jetsynthesys.com/' },
-      { name: 'Ubisoft India', url: 'https://www.ubisoft.com/en-us/company/careers/locations/pune' },
-      { name: 'Rockstar India', url: 'https://www.rockstargames.com/careers' }
+    quests: [
+      {
+        title: 'Epic Games Unreal Fellowship',
+        organizer: 'Epic Games',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.unrealengine.com/',
+        summary: 'A 5-week intensive program teaching real-time rendering, virtual production, and game level design using Unreal Engine.'
+      },
+      {
+        title: 'Unity Game Development Certification',
+        organizer: 'Unity Technologies',
+        lifecycle_type: 'workshop',
+        url: 'https://unity.com/',
+        summary: 'Earn industry-recognized certifications in game mechanics, C# scripting, and AR/VR interactive design.'
+      }
     ]
   },
   {
     field: 'Engineering & Robotics',
     tag: 'Robotics',
-    companies: [
-      { name: 'L&T Robotics', url: 'https://www.larsentoubro.com/' },
-      { name: 'Tata Motors', url: 'https://www.tatamotors.com/' },
-      { name: 'Systemantics Robotics', url: 'https://systemantics.com/' },
-      { name: 'GreyOrange Labs', url: 'https://www.greyorange.com/' },
-      { name: 'IIT Delhi Robotics Lab', url: 'https://robotics.iitd.ac.in/' }
+    quests: [
+      {
+        title: 'Systemantics Robotics Systems Internship',
+        organizer: 'Systemantics',
+        lifecycle_type: 'internship',
+        url: 'https://systemantics.com/',
+        summary: 'Work on kinematics, control loops, and hardware testing of industrial collaborative robotic arms.'
+      },
+      {
+        title: 'RoboCup International Robotics Challenge',
+        organizer: 'RoboCup Federation',
+        lifecycle_type: 'hackathon',
+        url: 'https://www.robocup.org/',
+        summary: 'A global competition where teams design autonomous soccer robots, rescue rovers, and home assistant systems.'
+      }
     ]
   },
   {
     field: 'International Relations',
     tag: 'Global',
-    companies: [
-      { name: 'ICWA Sapru House', url: 'https://www.icwa.in/' },
-      { name: 'IPCS Delhi', url: 'http://www.ipcs.org/' },
-      { name: 'USI Strategic Dept', url: 'https://usiofindia.org/' },
-      { name: 'RIS Delhi', url: 'http://www.ris.org.in/' },
-      { name: 'CPR Diplomatic Division', url: 'https://cprindia.org/careers/' }
+    quests: [
+      {
+        title: 'ICWA Foreign Policy & Diplomacy Internship',
+        organizer: 'Indian Council of World Affairs',
+        lifecycle_type: 'internship',
+        url: 'https://www.icwa.in/',
+        summary: 'Assist with geopolitical analysis, case studies on bilateral relations, and organizing international conferences in Sapru House.'
+      },
+      {
+        title: 'United Nations HQ Internship Program',
+        organizer: 'United Nations Secretariat',
+        lifecycle_type: 'internship',
+        url: 'https://careers.un.org/',
+        summary: 'Gain direct insight into multilateral diplomacy, sustainable development goals, and peace operations at the UN.'
+      }
     ]
   },
   {
     field: 'Psychology & Human Behavior',
     tag: 'Psychology',
-    companies: [
-      { name: 'NIMHANS Labs', url: 'https://nimhans.ac.in/' },
-      { name: 'DU Psychology Dept', url: 'http://psychology.du.ac.in/' },
-      { name: 'IHBAS Delhi', url: 'http://ihbas.delhigovt.nic.in/' },
-      { name: 'Fortis Mental Health', url: 'https://www.fortishealthcare.com/' },
-      { name: 'Ashoka Psychology', url: 'https://www.ashoka.edu.in/' }
+    quests: [
+      {
+        title: 'NIMHANS Clinical Psychology Program',
+        organizer: 'NIMHANS',
+        lifecycle_type: 'workshop',
+        url: 'https://nimhans.ac.in/',
+        summary: 'A summer training course covering mental health diagnostics, cognitive behavior therapy models, and neuropsychology.'
+      },
+      {
+        title: 'Ashoka Psychology Department Summer Research',
+        organizer: 'Ashoka University',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.ashoka.edu.in/',
+        summary: 'Participate in cognitive science research projects, compiling behavioral data, and analyzing clinical surveys.'
+      }
     ]
   }
 ];
@@ -296,12 +476,11 @@ const fieldsData = [
 let mockQuests: any[] = [];
 const lifecycles = ['internship', 'event', 'fellowship', 'workshop', 'hackathon'];
 
-// Programmatically seed 100 high-fidelity active quests (5 per field)
-fieldsData.forEach((fieldObj) => {
-  fieldObj.companies.forEach((comp, idx) => {
-    const lifecycle = lifecycles[idx % lifecycles.length];
+// Programmatically seed 40 high-fidelity active real-world quests (2 per field)
+realQuestsData.forEach((fieldObj) => {
+  fieldObj.quests.forEach((qData, idx) => {
     const id = `quest-field-${fieldObj.tag.toLowerCase()}-${idx}`;
-    const price = idx % 2 === 0 ? 0.00 : 25.00;
+    const price = idx === 0 ? 0.00 : 25.00;
     
     // Distribute across Delhi NCR, Boston, Cambridge, New York, San Francisco
     const citiesData = [
@@ -313,36 +492,25 @@ fieldsData.forEach((fieldObj) => {
     ];
     const loc = citiesData[idx % citiesData.length];
 
-    let title = '';
-    if (lifecycle === 'internship') title = `${comp.name} Summer ${fieldObj.field} Internship`;
-    else if (lifecycle === 'fellowship') title = `${comp.name} ${fieldObj.field} Fellowship`;
-    else if (lifecycle === 'event') title = `${comp.name} ${fieldObj.field} Seminar & Panel`;
-    else if (lifecycle === 'workshop') title = `${comp.name} ${fieldObj.field} Masterclass`;
-    else title = `${comp.name} ${fieldObj.field} Hackathon`;
-
-    // Start date (always future dates starting from July 15, 2026 to August 30, 2026)
-    // Accept applications as of July 11, 2026
     const startDate = new Date(Date.now() + (5 + idx * 5) * 24 * 60 * 60 * 1000).toISOString();
-
-    // Distribute target education level across school, undergrad, masters
-    const targetEdu = idx % 3 === 0 ? 'school' : (idx % 3 === 1 ? 'undergrad' : 'masters');
+    const targetEdu = idx === 0 ? 'undergrad' : 'masters';
 
     mockQuests.push({
       id,
-      title,
-      organizer: comp.name,
+      title: qData.title,
+      organizer: qData.organizer,
       status: 'active',
-      lifecycle_type: lifecycle,
+      lifecycle_type: qData.lifecycle_type,
       price,
       currency: loc.currency,
       formatted_address: loc.address,
       latitude: loc.lat,
       longitude: loc.lon,
-      tags: [fieldObj.tag, lifecycle.charAt(0).toUpperCase() + lifecycle.slice(1), 'Career', 'Learning'],
-      summary: `A high-impact opportunity at ${comp.name} focusing on key areas of ${fieldObj.field}. Complete hands-on projects, participate in networking events, and gain career-building skills.`,
-      embedding: generateMockVector(`${title} ${comp.name} ${fieldObj.field}`),
+      tags: [fieldObj.tag, qData.lifecycle_type.charAt(0).toUpperCase() + qData.lifecycle_type.slice(1), 'Career', 'Learning'],
+      summary: qData.summary,
+      embedding: generateMockVector(`${qData.title} ${qData.organizer} ${fieldObj.field}`),
       start_date: startDate,
-      raw_source_url: comp.url,
+      raw_source_url: qData.url,
       target_education: targetEdu
     });
   });
@@ -780,10 +948,103 @@ app.post('/api/v1/quests/swipe', async (req, res) => {
   mockInteractions.push({
     user_id: String(user_id),
     quest_id: String(quest_id),
-    interaction_type: interactionType
+  interaction_type: interactionType
   });
   return res.json({ status: 'ok', source: 'mock_db_alias' });
 });
+
+const cronOpportunitiesPool = [
+  {
+    title: 'Thiel Fellowship for Young Founders',
+    organizer: 'Thiel Foundation',
+    lifecycle_type: 'fellowship',
+    url: 'https://thielfellowship.org/',
+    summary: 'A two-year program offering $100,000 to young creators who want to build new things instead of sitting in a classroom.',
+    tag: 'Startup',
+    field: 'Entrepreneurship'
+  },
+  {
+    title: 'NASA International Internship Program',
+    organizer: 'NASA',
+    lifecycle_type: 'internship',
+    url: 'https://www.nasa.gov/careers/',
+    summary: 'A prestigious internship placing international students in NASA research centers to work on space exploration projects.',
+    tag: 'Space',
+    field: 'Space & Aerospace'
+  },
+  {
+    title: 'WHO Public Health Internship Program',
+    organizer: 'World Health Organization',
+    lifecycle_type: 'internship',
+    url: 'https://www.who.int/careers/internships',
+    summary: 'Gain practical experience in global health policy, disease prevention campaigns, and healthcare data compilation.',
+    tag: 'Healthcare',
+    field: 'Healthcare & Medicine'
+  },
+  {
+    title: 'CERN Summer Student Program',
+    organizer: 'CERN',
+    lifecycle_type: 'internship',
+    url: 'https://careers.cern/summer',
+    summary: 'Work on experimental physics, computing, or engineering projects at the Large Hadron Collider in Geneva, Switzerland.',
+    tag: 'Science',
+    field: 'Science & Research'
+  },
+  {
+    title: 'UNEP Environmental Policy Internship',
+    organizer: 'United Nations Environment Programme',
+    lifecycle_type: 'internship',
+    url: 'https://www.unep.org/',
+    summary: 'Support UNEP initiatives on biodiversity conservation, climate adaptation policies, and circular economy research.',
+    tag: 'Sustainability',
+    field: 'Climate & Sustainability'
+  },
+  {
+    title: 'Epic Games Unreal Fellowship',
+    organizer: 'Epic Games',
+    lifecycle_type: 'fellowship',
+    url: 'https://www.unrealengine.com/',
+    summary: 'A 5-week intensive program teaching real-time rendering, virtual production, and game level design using Unreal Engine.',
+    tag: 'Gaming',
+    field: 'Gaming & Interactive Media'
+  },
+  {
+    title: 'United Nations HQ Internship Program',
+    organizer: 'United Nations Secretariat',
+    lifecycle_type: 'internship',
+    url: 'https://careers.un.org/',
+    summary: 'Gain direct insight into multilateral diplomacy, sustainable development goals, and peace operations at the UN.',
+    tag: 'Global',
+    field: 'International Relations'
+  },
+  {
+    title: 'Ashoka Psychology Department Summer Research',
+    organizer: 'Ashoka University',
+    lifecycle_type: 'fellowship',
+    url: 'https://www.ashoka.edu.in/',
+    summary: 'Participate in cognitive science research projects, compiling behavioral data, and analyzing clinical surveys.',
+    tag: 'Psychology',
+    field: 'Psychology & Human Behavior'
+  },
+  {
+    title: 'Outreachy Open Source Software Internship',
+    organizer: 'Software Freedom Conservancy',
+    lifecycle_type: 'internship',
+    url: 'https://www.outreachy.org/',
+    summary: 'A remote internship program promoting diversity in tech by funding candidates to work on open-source projects.',
+    tag: 'Coding',
+    field: 'Software & Programming'
+  },
+  {
+    title: 'Google APMM Marketing Program',
+    organizer: 'Google',
+    lifecycle_type: 'internship',
+    url: 'https://buildyourfor.google/programs/apmm/',
+    summary: 'A rotational program designed to kickstart marketing careers, working on product messaging, brand campaigns, and growth marketing.',
+    tag: 'Marketing',
+    field: 'Marketing & Branding'
+  }
+];
 
 async function seedDatabaseIfNeeded() {
   try {
@@ -802,7 +1063,7 @@ async function seedDatabaseIfNeeded() {
     const res = await pool.query('SELECT COUNT(*) FROM side_quests;');
     const count = parseInt(res.rows[0].count, 10);
     if (count === 0) {
-      console.log('[SEED] Database side_quests table is empty. Seeding 100 programmatic quests...');
+      console.log('[SEED] Database side_quests table is empty. Seeding 40 actual real-world quests...');
       for (const quest of mockQuests) {
         const insertQuery = `
           INSERT INTO side_quests (
@@ -828,7 +1089,7 @@ async function seedDatabaseIfNeeded() {
           quest.raw_source_url
         ]);
       }
-      console.log('[SEED] Database successfully seeded with 100 active quests!');
+      console.log('[SEED] Database successfully seeded with 40 active quests!');
     } else {
       console.log(`[SEED] Database already has ${count} quests. Skipping startup seeding.`);
     }
@@ -842,21 +1103,17 @@ app.listen(port, () => {
   seedDatabaseIfNeeded();
 });
 
-// Background job to automatically add new opportunities (events, fellowships, internships)
-// and prune expired opportunities every 30 minutes
 setInterval(() => {
   console.log('[CRON] Running 30-minute opportunity update cycle...');
 
   const nowIso = new Date().toISOString();
   
-  // 1. Remove expired quests from memory fallback
   const originalCount = mockQuests.length;
   mockQuests = mockQuests.filter(q => new Date(q.start_date).getTime() >= Date.now());
   if (mockQuests.length < originalCount) {
     console.log(`[CRON] Pruned ${originalCount - mockQuests.length} expired quests from in-memory store.`);
   }
 
-  // 2. Remove expired quests from PostgreSQL database (if active)
   pool.query('DELETE FROM side_quests WHERE start_date < $1;', [nowIso])
     .then(res => {
       if (res.rowCount && res.rowCount > 0) {
@@ -867,50 +1124,41 @@ setInterval(() => {
       console.warn('[CRON] Warning: Could not delete expired quests from PostgreSQL (db might be offline):', err.message);
     });
 
-  // 3. Add a new active dynamic quest in one of the 20 fields
-  const randomField = fieldsData[Math.floor(Math.random() * fieldsData.length)];
-  const randomComp = randomField.companies[Math.floor(Math.random() * randomField.companies.length)];
-  const lifecycle = lifecycles[Math.floor(Math.random() * lifecycles.length)];
+  const randomOpp = cronOpportunitiesPool[Math.floor(Math.random() * cronOpportunitiesPool.length)];
   
-  const delLocs = [
-    { address: 'Saket District Centre, New Delhi, Delhi 110017', lat: 28.5284, lon: 77.2185 },
-    { address: 'DLF Cyber City, Gurugram, Haryana 122002', lat: 28.4950, lon: 77.0880 },
-    { address: 'Sector 62, Noida, Uttar Pradesh 201301', lat: 28.6210, lon: 77.3620 }
+  const citiesData = [
+    { address: 'Saket District Centre, New Delhi, Delhi 110017', lat: 28.5284, lon: 77.2185, currency: 'INR' },
+    { address: '100 Federal St, Boston, MA 02110', lat: 42.3551, lon: -71.0562, currency: 'USD' },
+    { address: 'Infinite Corridor, MIT, Cambridge, MA 02139', lat: 42.3595, lon: -71.0920, currency: 'USD' },
+    { address: 'Broadway, New York, NY 10012', lat: 40.7250, lon: -73.9980, currency: 'USD' },
+    { address: 'Market St, San Francisco, CA 94103', lat: 37.7749, lon: -122.4194, currency: 'USD' }
   ];
-  const loc = delLocs[Math.floor(Math.random() * delLocs.length)];
-
-  let title = '';
-  if (lifecycle === 'internship') title = `${randomComp.name} Summer ${randomField.field} Internship`;
-  else if (lifecycle === 'fellowship') title = `${randomComp.name} ${randomField.field} Fellowship`;
-  else if (lifecycle === 'event') title = `${randomComp.name} ${randomField.field} Seminar & Panel`;
-  else if (lifecycle === 'workshop') title = `${randomComp.name} ${randomField.field} Masterclass`;
-  else title = `${randomComp.name} ${randomField.field} Hackathon`;
+  const loc = citiesData[Math.floor(Math.random() * citiesData.length)];
 
   const newQuestId = `dynamic-quest-${Date.now()}`;
-  const titleWithTime = `${title} (${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })})`;
-  const startDate = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString();
+  const startDate = new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString();
 
   const newQuest = {
     id: newQuestId,
-    title: titleWithTime,
-    organizer: randomComp.name,
+    title: randomOpp.title,
+    organizer: randomOpp.organizer,
     status: 'active',
-    lifecycle_type: lifecycle,
+    lifecycle_type: randomOpp.lifecycle_type,
     price: 0.00,
-    currency: 'INR',
+    currency: loc.currency,
     formatted_address: loc.address,
     latitude: loc.lat,
     longitude: loc.lon,
-    tags: [randomField.tag, lifecycle.charAt(0).toUpperCase() + lifecycle.slice(1), 'Career', 'Learning'],
-    summary: `A dynamically loaded ${lifecycle} targeting candidates interested in ${randomField.field} programs. Registration is open.`,
-    embedding: generateMockVector(`${titleWithTime} ${randomComp.name} ${randomField.field}`),
+    tags: [randomOpp.tag, randomOpp.lifecycle_type.charAt(0).toUpperCase() + randomOpp.lifecycle_type.slice(1), 'Career', 'Learning'],
+    summary: randomOpp.summary,
+    embedding: generateMockVector(`${randomOpp.title} ${randomOpp.organizer} ${randomOpp.field}`),
     start_date: startDate,
-    raw_source_url: randomComp.url,
+    raw_source_url: randomOpp.url,
     target_education: 'undergrad'
   };
 
   mockQuests.push(newQuest);
-  console.log(`[CRON] Automatically added new opportunity: "${newQuest.title}" to memory store.`);
+  console.log(`[CRON] Automatically added new actual opportunity: "${newQuest.title}" to memory store.`);
 
   const insertQuery = `
     INSERT INTO side_quests (
@@ -935,10 +1183,10 @@ setInterval(() => {
     newQuest.start_date,
     newQuest.raw_source_url
   ])
-    .then(() => {
-      console.log(`[CRON] Successfully synced new opportunity "${newQuest.title}" to PostgreSQL.`);
-    })
-    .catch(err => {
-      console.warn('[CRON] Warning: Could not sync new opportunity to PostgreSQL (db might be offline):', err.message);
-    });
+  .then(() => {
+    console.log(`[CRON] Successfully synchronized new actual opportunity "${newQuest.title}" to PostgreSQL.`);
+  })
+  .catch(err => {
+    console.warn('[CRON] Warning: Could not sync new opportunity to PostgreSQL (db might be offline):', err.message);
+  });
 }, 30 * 60 * 1000);
