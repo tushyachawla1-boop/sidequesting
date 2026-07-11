@@ -108,7 +108,7 @@ export default function SavedQuests() {
                   <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4 text-xs text-slate-300 bg-slate-950/40 p-3 rounded-xl border border-slate-800/40">
                     <div className="flex items-center gap-1.5">
                       <DollarSign className="w-4 h-4 text-rose-400" />
-                      <span>{quest.price === 0 ? 'Free' : `$${quest.price}`}</span>
+                      <span>{quest.price === 0 ? 'Free' : `${quest.currency === 'INR' ? '₹' : '$'}${quest.price}`}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <MapPin className="w-4 h-4 text-rose-400" />

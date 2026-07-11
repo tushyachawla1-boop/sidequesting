@@ -14,10 +14,26 @@ const cities = [
 ];
 
 const availableInterests = [
-  'Internships', 'Volunteership', 'Fellowship', 'Humanities', 'Arts',
-  'Quantum', 'Physics', 'Computing', 'AI', 'MachineLearning',
-  'DeepLearning', 'Blockchain', 'Web3', 'Design', 'UIUX',
-  'Startup', 'Photography', 'Outdoors'
+  '🤖 Artificial Intelligence',
+  '💻 Software & Programming',
+  '🚀 Entrepreneurship',
+  '📈 Business & Management',
+  '💰 Finance & Investing',
+  '📊 Data Science & Analytics',
+  '🎨 Design & Creativity',
+  '🎥 Media & Content Creation',
+  '📣 Marketing & Branding',
+  '🏛️ Policy Making & Governance',
+  '⚖️ Law & Justice',
+  '🩺 Healthcare & Medicine',
+  '🔬 Science & Research',
+  '🌱 Climate & Sustainability',
+  '🛰️ Space & Aerospace',
+  '🔐 Cybersecurity',
+  '🎮 Gaming & Interactive Media',
+  '🏗️ Engineering & Robotics',
+  '🌍 International Relations',
+  '🧠 Psychology & Human Behavior'
 ];
 
 export default function Onboarding() {

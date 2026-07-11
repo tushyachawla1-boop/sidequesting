@@ -288,18 +288,6 @@ export default function Discover() {
                     <p className="text-slate-400 text-xs font-medium flex items-center gap-1.5">
                       Hosted by <span className="text-slate-200 font-semibold">{currentCard.organizer}</span>
                     </p>
-                    {currentCard.raw_source_url && (
-                      <a
-                        href={currentCard.raw_source_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-bold text-rose-400 hover:text-rose-350 transition shrink-0 bg-rose-950/20 px-2.5 py-1 rounded-lg border border-rose-900/50"
-                        onClick={(e) => e.stopPropagation()} // Prevent card drag trigger
-                      >
-                        Apply Now
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    )}
                   </div>
 
                   {/* Metadata fields */}
@@ -309,7 +297,7 @@ export default function Discover() {
                       <div>
                         <span className="text-[10px] text-slate-500 block">COST</span>
                         <span className="text-xs font-semibold text-slate-200">
-                          {currentCard.price === 0 ? 'Free' : `$${currentCard.price}`}
+                          {currentCard.price === 0 ? 'Free' : `${currentCard.currency === 'INR' ? '₹' : '$'}${currentCard.price}`}
                         </span>
                       </div>
                     </div>
@@ -346,12 +334,26 @@ export default function Discover() {
                   </div>
 
                   {/* AI Summary */}
-                  <div className="space-y-1.5">
+                  <div className="space-y-1.5 mb-4">
                     <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">AI Summary</span>
                     <p className="text-slate-300 text-sm leading-relaxed font-normal">
                       {currentCard.summary}
                     </p>
                   </div>
+
+                  {/* Dedicated Apply Now Button */}
+                  {currentCard.raw_source_url && (
+                    <a
+                      href={currentCard.raw_source_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex justify-center items-center gap-2 text-sm font-bold text-white transition bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 shadow-[0_0_15px_rgba(244,63,94,0.3)] py-3 px-4 rounded-xl border border-rose-400/20 mb-2 cursor-pointer text-center"
+                      onClick={(e) => e.stopPropagation()} // Prevent card drag trigger
+                    >
+                      Apply Now
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
 
                 {/* Footer tags */}
