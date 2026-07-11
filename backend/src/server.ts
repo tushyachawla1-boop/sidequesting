@@ -80,14 +80,16 @@ const realQuestsData = [
         organizer: 'Allen Institute for AI (AI2)',
         lifecycle_type: 'fellowship',
         url: 'https://allenai.org/careers',
-        summary: 'A research residency program for predoctoral candidates and recent graduates to work on advanced AI projects with AI2 scientists. Applications are accepted on a rolling basis.'
+        summary: 'A research residency program for predoctoral candidates and recent graduates to work on advanced AI projects with AI2 scientists. Applications are accepted on a rolling basis.',
+        cityIndex: 1
       },
       {
         title: 'Hugging Face Open-Source Research Collaborations',
         organizer: 'Hugging Face',
         lifecycle_type: 'fellowship',
         url: 'https://huggingface.co/join',
-        summary: 'Collaborate with Hugging Face researchers on open-source machine learning, NLP, and model evaluation projects. Applications are open on a rolling basis.'
+        summary: 'Collaborate with Hugging Face researchers on open-source machine learning, NLP, and model evaluation projects. Applications are open on a rolling basis.',
+        cityIndex: 3
       }
     ]
   },
@@ -100,14 +102,16 @@ const realQuestsData = [
         organizer: 'Major League Hacking',
         lifecycle_type: 'fellowship',
         url: 'https://fellowship.mlh.io/',
-        summary: 'A 12-week educational program where students contribute to open-source software projects used globally.'
+        summary: 'A 12-week educational program where students contribute to open-source software projects used globally.',
+        cityIndex: 3
       },
       {
         title: 'Outreachy Open Source Software Internship',
         organizer: 'Software Freedom Conservancy',
         lifecycle_type: 'internship',
         url: 'https://www.outreachy.org/',
-        summary: 'A remote internship program promoting diversity in tech by funding candidates to work on open-source projects.'
+        summary: 'A remote internship program promoting diversity in tech by funding candidates to work on open-source projects.',
+        cityIndex: 4
       }
     ]
   },
@@ -120,14 +124,16 @@ const realQuestsData = [
         organizer: 'Y Combinator',
         lifecycle_type: 'hackathon',
         url: 'https://www.ycombinator.com/apply/',
-        summary: 'YC invests $500k in twice-yearly batches of startups, providing intensive mentorship, pitch training, and demo day access.'
+        summary: 'YC invests $500k in twice-yearly batches of startups, providing intensive mentorship, pitch training, and demo day access.',
+        cityIndex: 4
       },
       {
         title: 'Thiel Fellowship for Young Founders',
         organizer: 'Thiel Foundation',
         lifecycle_type: 'fellowship',
         url: 'https://thielfellowship.org/',
-        summary: 'A two-year program offering $100,000 to young creators who want to build new things instead of sitting in a classroom.'
+        summary: 'A two-year program offering $100,000 to young creators who want to build new things instead of sitting in a classroom.',
+        cityIndex: 4
       }
     ]
   },
@@ -140,14 +146,16 @@ const realQuestsData = [
         organizer: 'McKinsey & Company',
         lifecycle_type: 'internship',
         url: 'https://www.mckinsey.com/careers',
-        summary: 'Work directly with client teams on core strategic problems, learning McKinsey consulting methodologies and frameworks.'
+        summary: 'Work directly with client teams on core strategic problems, learning McKinsey consulting methodologies and frameworks.',
+        cityIndex: 3
       },
       {
         title: 'BCG Associate Strategic Consulting Program',
         organizer: 'Boston Consulting Group',
         lifecycle_type: 'internship',
         url: 'https://www.bcg.com/careers',
-        summary: 'Gain exposure to corporate strategy, operations, and business transformation projects under senior BCG advisors.'
+        summary: 'Gain exposure to corporate strategy, operations, and business transformation projects under senior BCG advisors.',
+        cityIndex: 1
       }
     ]
   },
@@ -160,14 +168,16 @@ const realQuestsData = [
         organizer: 'Goldman Sachs',
         lifecycle_type: 'internship',
         url: 'https://www.goldmansachs.com/careers',
-        summary: 'An eight-to-ten week internship offering division-specific training in investment banking, global markets, or asset management.'
+        summary: 'An eight-to-ten week internship offering division-specific training in investment banking, global markets, or asset management.',
+        cityIndex: 3
       },
       {
         title: 'J.P. Morgan Investment Banking Program',
         organizer: 'J.P. Morgan',
         lifecycle_type: 'internship',
         url: 'https://careers.jpmorganchase.com',
-        summary: 'Analyze market trends, assist with financial modeling, and support execution of major M&A transactions.'
+        summary: 'Analyze market trends, assist with financial modeling, and support execution of major M&A transactions.',
+        cityIndex: 3
       }
     ]
   },
@@ -180,14 +190,16 @@ const realQuestsData = [
         organizer: 'Kaggle',
         lifecycle_type: 'hackathon',
         url: 'https://www.kaggle.com/competitions',
-        summary: 'Compete on real-world datasets to build predictive models, earn prize money, and rank on the global leaderboard.'
+        summary: 'Compete on real-world datasets to build predictive models, earn prize money, and rank on the global leaderboard.',
+        cityIndex: 4
       },
       {
         title: 'Databricks University Alliance Certification',
         organizer: 'Databricks',
         lifecycle_type: 'workshop',
         url: 'https://www.databricks.com/',
-        summary: 'Free training and certifications in Spark, data engineering, and lakehouse architectures for university students.'
+        summary: 'Free training and certifications in Spark, data engineering, and lakehouse architectures for university students.',
+        cityIndex: 4
       }
     ]
   },
@@ -200,14 +212,16 @@ const realQuestsData = [
         organizer: 'Figma',
         lifecycle_type: 'event',
         url: 'https://config.figma.com/',
-        summary: 'Figma\'s annual global conference showcasing the future of design systems, developer handoff tools, and product design.'
+        summary: 'Figma\'s annual global conference showcasing the future of design systems, developer handoff tools, and product design.',
+        cityIndex: 4
       },
       {
         title: 'Interaction Design Foundation UX/UI Certifications',
         organizer: 'Interaction Design Foundation',
         lifecycle_type: 'workshop',
         url: 'https://www.interaction-design.org/',
-        summary: 'Acquire globally recognized certifications in user research, wireframing, usability testing, and UI design.'
+        summary: 'Acquire globally recognized certifications in user research, wireframing, usability testing, and UI design.',
+        cityIndex: 1
       }
     ]
   },
@@ -220,14 +234,16 @@ const realQuestsData = [
         organizer: 'YouTube',
         lifecycle_type: 'workshop',
         url: 'https://creatoracademy.youtube.com/',
-        summary: 'Learn channel growth strategies, audience analytics, production techniques, and monetization policies directly from YouTube.'
+        summary: 'Learn channel growth strategies, audience analytics, production techniques, and monetization policies directly from YouTube.',
+        cityIndex: 4
       },
       {
         title: 'Adobe Creative Residency Program',
         organizer: 'Adobe',
         lifecycle_type: 'fellowship',
         url: 'https://www.adobe.com/',
-        summary: 'Fully funded residency giving creators the time and resources to work on personal passion projects using Creative Cloud.'
+        summary: 'Fully funded residency giving creators the time and resources to work on personal passion projects using Creative Cloud.',
+        cityIndex: 4
       }
     ]
   },
@@ -240,14 +256,16 @@ const realQuestsData = [
         organizer: 'Google',
         lifecycle_type: 'internship',
         url: 'https://buildyourfor.google/programs/apmm/',
-        summary: 'A rotational program designed to kickstart marketing careers, working on product messaging, brand campaigns, and growth marketing.'
+        summary: 'A rotational program designed to kickstart marketing careers, working on product messaging, brand campaigns, and growth marketing.',
+        cityIndex: 4
       },
       {
         title: 'HubSpot Academy Digital Marketing Certification',
         organizer: 'HubSpot',
         lifecycle_type: 'workshop',
         url: 'https://academy.hubspot.com/',
-        summary: 'A free, structured course covering search engine optimization, content strategy, email marketing, and conversion optimization.'
+        summary: 'A free, structured course covering search engine optimization, content strategy, email marketing, and conversion optimization.',
+        cityIndex: 2
       }
     ]
   },
@@ -260,14 +278,16 @@ const realQuestsData = [
         organizer: 'PRS Legislative Research',
         lifecycle_type: 'fellowship',
         url: 'https://prsindia.org/lamp',
-        summary: 'An intensive fellowship in Delhi mentoring young graduates to assist Members of Parliament with legislative research and policy reviews.'
+        summary: 'An intensive fellowship in Delhi mentoring young graduates to assist Members of Parliament with legislative research and policy reviews.',
+        cityIndex: 0
       },
       {
         title: 'NITI Aayog Policy & Governance Internship',
         organizer: 'NITI Aayog',
         lifecycle_type: 'internship',
         url: 'https://www.niti.gov.in/internship',
-        summary: 'Work directly with NITI Aayog verticals on public policy formulations, rural development metrics, and state coordination.'
+        summary: 'Work directly with NITI Aayog verticals on public policy formulations, rural development metrics, and state coordination.',
+        cityIndex: 0
       }
     ]
   },
@@ -280,14 +300,16 @@ const realQuestsData = [
         organizer: 'Vidhi Centre for Legal Policy',
         lifecycle_type: 'internship',
         url: 'https://vidhilegalpolicy.in/careers/',
-        summary: 'Conduct legal research, draft policy briefs, and analyze public legislation at Vidhi\'s New Delhi office.'
+        summary: 'Conduct legal research, draft policy briefs, and analyze public legislation at Vidhi\'s New Delhi office.',
+        cityIndex: 0
       },
       {
         title: 'Supreme Court of India Law Clerkship',
         organizer: 'Supreme Court of India',
         lifecycle_type: 'fellowship',
         url: 'https://main.sci.gov.in/',
-        summary: 'Assist Hon\'ble Judges of the Supreme Court with case briefs, legal analysis, research, and court room preparation.'
+        summary: 'Assist Hon\'ble Judges of the Supreme Court with case briefs, legal analysis, research, and court room preparation.',
+        cityIndex: 0
       }
     ]
   },
@@ -300,14 +322,16 @@ const realQuestsData = [
         organizer: 'World Health Organization',
         lifecycle_type: 'internship',
         url: 'https://www.who.int/careers/internships',
-        summary: 'Gain practical experience in global health policy, disease prevention campaigns, and healthcare data compilation.'
+        summary: 'Gain practical experience in global health policy, disease prevention campaigns, and healthcare data compilation.',
+        cityIndex: 0
       },
       {
         title: 'AIIMS Medical & Biotech Research Fellowship',
         organizer: 'AIIMS New Delhi',
         lifecycle_type: 'fellowship',
         url: 'https://www.aiims.edu/',
-        summary: 'Participate in medical laboratory projects, clinical trials analysis, or health system policy research at AIIMS.'
+        summary: 'Participate in medical laboratory projects, clinical trials analysis, or health system policy research at AIIMS.',
+        cityIndex: 0
       }
     ]
   },
@@ -320,14 +344,16 @@ const realQuestsData = [
         organizer: 'CERN',
         lifecycle_type: 'internship',
         url: 'https://careers.cern/summer',
-        summary: 'Work on experimental physics, computing, or engineering projects at the Large Hadron Collider in Geneva, Switzerland.'
+        summary: 'Work on experimental physics, computing, or engineering projects at the Large Hadron Collider in Geneva, Switzerland.',
+        cityIndex: 2
       },
       {
         title: 'IAS Summer Research Fellowship (SRFP)',
         organizer: 'Indian Academy of Sciences',
         lifecycle_type: 'fellowship',
         url: 'https://www.ias.ac.in/',
-        summary: 'A fully funded two-month research fellowship placing students with leading scientists in research institutions across India.'
+        summary: 'A fully funded two-month research fellowship placing students with leading scientists in research institutions across India.',
+        cityIndex: 0
       }
     ]
   },
@@ -340,14 +366,16 @@ const realQuestsData = [
         organizer: 'United Nations Environment Programme',
         lifecycle_type: 'internship',
         url: 'https://www.unep.org/',
-        summary: 'Support UNEP initiatives on biodiversity conservation, climate adaptation policies, and circular economy research.'
+        summary: 'Support UNEP initiatives on biodiversity conservation, climate adaptation policies, and circular economy research.',
+        cityIndex: 3
       },
       {
         title: 'CSE Environmental Communications Program',
         organizer: 'Centre for Science and Environment',
         lifecycle_type: 'workshop',
         url: 'https://www.cseindia.org/',
-        summary: 'A short-term course on environmental journalism, climate justice, air pollution reporting, and green advocacy.'
+        summary: 'A short-term course on environmental journalism, climate justice, air pollution reporting, and green advocacy.',
+        cityIndex: 0
       }
     ]
   },
@@ -360,14 +388,16 @@ const realQuestsData = [
         organizer: 'ISRO',
         lifecycle_type: 'workshop',
         url: 'https://www.isro.gov.in/',
-        summary: 'Learn principles of satellite remote sensing, celestial mechanics, and launch vehicle dynamics from ISRO engineers.'
+        summary: 'Learn principles of satellite remote sensing, celestial mechanics, and launch vehicle dynamics from ISRO engineers.',
+        cityIndex: 0
       },
       {
         title: 'NASA International Internship Program',
         organizer: 'NASA',
         lifecycle_type: 'internship',
         url: 'https://www.nasa.gov/careers/',
-        summary: 'A prestigious internship placing international students in NASA research centers to work on space exploration projects.'
+        summary: 'A prestigious internship placing international students in NASA research centers to work on space exploration projects.',
+        cityIndex: 2
       }
     ]
   },
@@ -380,14 +410,16 @@ const realQuestsData = [
         organizer: 'Google',
         lifecycle_type: 'workshop',
         url: 'https://grow.google/certificates/cybersecurity/',
-        summary: 'A hands-on professional certificate covering network security, threat detection, Python scriptings, and SQL.'
+        summary: 'A hands-on professional certificate covering network security, threat detection, Python scriptings, and SQL.',
+        cityIndex: 4
       },
       {
         title: 'SANS CyberStart Hacking Challenge',
         organizer: 'SANS Institute',
         lifecycle_type: 'hackathon',
         url: 'https://www.sans.org/',
-        summary: 'A gamified cybersecurity competition teaching vulnerability analysis, password cracking, and forensics.'
+        summary: 'A gamified cybersecurity competition teaching vulnerability analysis, password cracking, and forensics.',
+        cityIndex: 1
       }
     ]
   },
@@ -400,14 +432,16 @@ const realQuestsData = [
         organizer: 'Epic Games',
         lifecycle_type: 'fellowship',
         url: 'https://www.unrealengine.com/',
-        summary: 'A 5-week intensive program teaching real-time rendering, virtual production, and game level design using Unreal Engine.'
+        summary: 'A 5-week intensive program teaching real-time rendering, virtual production, and game level design using Unreal Engine.',
+        cityIndex: 3
       },
       {
         title: 'Unity Game Development Certification',
         organizer: 'Unity Technologies',
         lifecycle_type: 'workshop',
         url: 'https://unity.com/',
-        summary: 'Earn industry-recognized certifications in game mechanics, C# scripting, and AR/VR interactive design.'
+        summary: 'Earn industry-recognized certifications in game mechanics, C# scripting, and AR/VR interactive design.',
+        cityIndex: 4
       }
     ]
   },
@@ -420,14 +454,16 @@ const realQuestsData = [
         organizer: 'Systemantics',
         lifecycle_type: 'internship',
         url: 'https://systemantics.com/',
-        summary: 'Work on kinematics, control loops, and hardware testing of industrial collaborative robotic arms.'
+        summary: 'Work on kinematics, control loops, and hardware testing of industrial collaborative robotic arms.',
+        cityIndex: 0
       },
       {
         title: 'RoboCup International Robotics Challenge',
         organizer: 'RoboCup Federation',
         lifecycle_type: 'hackathon',
         url: 'https://www.robocup.org/',
-        summary: 'A global competition where teams design autonomous soccer robots, rescue rovers, and home assistant systems.'
+        summary: 'A global competition where teams design autonomous soccer robots, rescue rovers, and home assistant systems.',
+        cityIndex: 1
       }
     ]
   },
@@ -440,14 +476,16 @@ const realQuestsData = [
         organizer: 'Indian Council of World Affairs',
         lifecycle_type: 'internship',
         url: 'https://www.icwa.in/',
-        summary: 'Assist with geopolitical analysis, case studies on bilateral relations, and organizing international conferences in Sapru House.'
+        summary: 'Assist with geopolitical analysis, case studies on bilateral relations, and organizing international conferences in Sapru House.',
+        cityIndex: 0
       },
       {
         title: 'United Nations HQ Internship Program',
         organizer: 'United Nations Secretariat',
         lifecycle_type: 'internship',
         url: 'https://careers.un.org/',
-        summary: 'Gain direct insight into multilateral diplomacy, sustainable development goals, and peace operations at the UN.'
+        summary: 'Gain direct insight into multilateral diplomacy, sustainable development goals, and peace operations at the UN.',
+        cityIndex: 3
       }
     ]
   },
@@ -460,14 +498,16 @@ const realQuestsData = [
         organizer: 'NIMHANS',
         lifecycle_type: 'workshop',
         url: 'https://nimhans.ac.in/',
-        summary: 'A summer training course covering mental health diagnostics, cognitive behavior therapy models, and neuropsychology.'
+        summary: 'A summer training course covering mental health diagnostics, cognitive behavior therapy models, and neuropsychology.',
+        cityIndex: 0
       },
       {
         title: 'Ashoka Psychology Department Summer Research',
         organizer: 'Ashoka University',
         lifecycle_type: 'fellowship',
         url: 'https://www.ashoka.edu.in/',
-        summary: 'Participate in cognitive science research projects, compiling behavioral data, and analyzing clinical surveys.'
+        summary: 'Participate in cognitive science research projects, compiling behavioral data, and analyzing clinical surveys.',
+        cityIndex: 0
       }
     ]
   }
@@ -475,6 +515,7 @@ const realQuestsData = [
 
 let mockQuests: any[] = [];
 const lifecycles = ['internship', 'event', 'fellowship', 'workshop', 'hackathon'];
+let globalIdx = 0;
 
 // Programmatically seed 40 high-fidelity active real-world quests (2 per field)
 realQuestsData.forEach((fieldObj) => {
@@ -490,7 +531,8 @@ realQuestsData.forEach((fieldObj) => {
       { address: 'Broadway, New York, NY 10012', lat: 40.7250, lon: -73.9980, currency: 'USD' },
       { address: 'Market St, San Francisco, CA 94103', lat: 37.7749, lon: -122.4194, currency: 'USD' }
     ];
-    const loc = citiesData[idx % citiesData.length];
+    const cityIndex = typeof (qData as any).cityIndex === 'number' ? (qData as any).cityIndex : (globalIdx % citiesData.length);
+    const loc = citiesData[cityIndex];
 
     const startDate = new Date(Date.now() + (5 + idx * 5) * 24 * 60 * 60 * 1000).toISOString();
     const targetEdu = idx === 0 ? 'undergrad' : 'masters';
@@ -513,6 +555,8 @@ realQuestsData.forEach((fieldObj) => {
       raw_source_url: qData.url,
       target_education: targetEdu
     });
+    
+    globalIdx++;
   });
 });
 
@@ -693,6 +737,11 @@ app.get('/api/v1/quests/feed', async (req, res) => {
   const getTargetEdu = (title: string) => {
     const titleLower = title.toLowerCase();
     if (
+      titleLower.includes('graduate') ||
+      titleLower.includes('postgraduate') ||
+      titleLower.includes('phd') ||
+      titleLower.includes('masters') ||
+      titleLower.includes('doctorate') ||
       titleLower.includes('advanced') ||
       titleLower.includes('deep learning') ||
       titleLower.includes('seminar') ||
