@@ -76,18 +76,18 @@ const realQuestsData = [
     tag: 'AI',
     quests: [
       {
-        title: 'OpenAI Residency Program',
-        organizer: 'OpenAI',
+        title: 'AI2 Predoctoral Young Investigator (PYI) Program',
+        organizer: 'Allen Institute for AI (AI2)',
         lifecycle_type: 'fellowship',
-        url: 'https://openai.com/residency/',
-        summary: 'The OpenAI Residency is a program designed for researchers and engineers transitioning into AI from other technical fields.'
+        url: 'https://allenai.org/careers',
+        summary: 'A research residency program for predoctoral candidates and recent graduates to work on advanced AI projects with AI2 scientists. Applications are accepted on a rolling basis.'
       },
       {
-        title: 'Google Summer of Code - TensorFlow AI Projects',
-        organizer: 'Google Open Source',
-        lifecycle_type: 'internship',
-        url: 'https://summerofcode.withgoogle.com/',
-        summary: 'Contribute to open-source machine learning frameworks like TensorFlow and Keras under expert Google developer mentorship.'
+        title: 'Hugging Face Open-Source Research Collaborations',
+        organizer: 'Hugging Face',
+        lifecycle_type: 'fellowship',
+        url: 'https://huggingface.co/join',
+        summary: 'Collaborate with Hugging Face researchers on open-source machine learning, NLP, and model evaluation projects. Applications are open on a rolling basis.'
       }
     ]
   },
