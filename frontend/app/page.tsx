@@ -14,6 +14,9 @@ const cities = [
 ];
 
 const availableInterests = [
+  '💼 Internships',
+  '🎓 Fellowships',
+  '🏛️ Conferences',
   '🤖 Artificial Intelligence',
   '💻 Software & Programming',
   '🚀 Entrepreneurship',
@@ -188,7 +191,7 @@ export default function Onboarding() {
               <Sparkles className="w-4 h-4 text-rose-400" />
               Select Primary Interests
             </label>
-            <div className="flex flex-wrap gap-2 max-h-36 overflow-y-auto p-2 bg-slate-950 rounded-xl border border-slate-800 custom-scrollbar">
+            <div className="grid grid-cols-2 gap-2 max-h-56 overflow-y-auto p-2.5 bg-slate-950 rounded-xl border border-slate-800 custom-scrollbar">
               {availableInterests.map((interest) => {
                 const selected = selectedInterests.includes(interest);
                 return (
@@ -196,7 +199,7 @@ export default function Onboarding() {
                     type="button"
                     key={interest}
                     onClick={() => toggleInterest(interest)}
-                    className={`text-xs px-3 py-1.5 rounded-lg border transition duration-200 ${
+                    className={`text-xs px-2.5 py-2 rounded-lg border transition duration-200 text-left truncate flex items-center gap-1.5 ${
                       selected
                         ? 'bg-rose-500/10 border-rose-500 text-rose-300 shadow-lg shadow-rose-500/5'
                         : 'bg-slate-900 border-slate-800 text-slate-400 hover:border-slate-700'

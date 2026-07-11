@@ -301,14 +301,17 @@ fieldsData.forEach((fieldObj) => {
   fieldObj.companies.forEach((comp, idx) => {
     const lifecycle = lifecycles[idx % lifecycles.length];
     const id = `quest-field-${fieldObj.tag.toLowerCase()}-${idx}`;
-    const price = idx % 2 === 0 ? 0.00 : 10.00;
+    const price = idx % 2 === 0 ? 0.00 : 25.00;
     
-    const delLocs = [
-      { address: 'Saket District Centre, New Delhi, Delhi 110017', lat: 28.5284, lon: 77.2185 },
-      { address: 'DLF Cyber City, Gurugram, Haryana 122002', lat: 28.4950, lon: 77.0880 },
-      { address: 'Sector 62, Noida, Uttar Pradesh 201301', lat: 28.6210, lon: 77.3620 }
+    // Distribute across Delhi NCR, Boston, Cambridge, New York, San Francisco
+    const citiesData = [
+      { address: 'Saket District Centre, New Delhi, Delhi 110017', lat: 28.5284, lon: 77.2185, currency: 'INR' },
+      { address: '100 Federal St, Boston, MA 02110', lat: 42.3551, lon: -71.0562, currency: 'USD' },
+      { address: 'Infinite Corridor, MIT, Cambridge, MA 02139', lat: 42.3595, lon: -71.0920, currency: 'USD' },
+      { address: 'Broadway, New York, NY 10012', lat: 40.7250, lon: -73.9980, currency: 'USD' },
+      { address: 'Market St, San Francisco, CA 94103', lat: 37.7749, lon: -122.4194, currency: 'USD' }
     ];
-    const loc = delLocs[idx % delLocs.length];
+    const loc = citiesData[idx % citiesData.length];
 
     let title = '';
     if (lifecycle === 'internship') title = `${comp.name} Summer ${fieldObj.field} Internship`;
@@ -321,6 +324,9 @@ fieldsData.forEach((fieldObj) => {
     // Accept applications as of July 11, 2026
     const startDate = new Date(Date.now() + (5 + idx * 5) * 24 * 60 * 60 * 1000).toISOString();
 
+    // Distribute target education level across school, undergrad, masters
+    const targetEdu = idx % 3 === 0 ? 'school' : (idx % 3 === 1 ? 'undergrad' : 'masters');
+
     mockQuests.push({
       id,
       title,
@@ -328,7 +334,7 @@ fieldsData.forEach((fieldObj) => {
       status: 'active',
       lifecycle_type: lifecycle,
       price,
-      currency: 'INR',
+      currency: loc.currency,
       formatted_address: loc.address,
       latitude: loc.lat,
       longitude: loc.lon,
@@ -337,7 +343,7 @@ fieldsData.forEach((fieldObj) => {
       embedding: generateMockVector(`${title} ${comp.name} ${fieldObj.field}`),
       start_date: startDate,
       raw_source_url: comp.url,
-      target_education: idx % 2 === 0 ? 'undergrad' : 'masters'
+      target_education: targetEdu
     });
   });
 });
@@ -558,46 +564,75 @@ app.get('/api/v1/quests/feed', async (req, res) => {
   if (selectedInterests.length > 0) {
     const normalizeInterest = (interest: string) => {
       const lower = interest.toLowerCase().trim();
-      if (lower.includes('ai') || lower.includes('artificial')) return 'ai';
-      if (lower.includes('coding') || lower.includes('programming') || lower.includes('software')) return 'coding';
-      if (lower.includes('entrepreneurship') || lower.includes('startup')) return 'startup';
-      if (lower.includes('business') || lower.includes('management') || lower.includes('strategy')) return 'business';
-      if (lower.includes('finance') || lower.includes('investing')) return 'finance';
-      if (lower.includes('data science') || lower.includes('analytics') || lower.includes('stats')) return 'data';
-      if (lower.includes('design') || lower.includes('creativity') || lower.includes('ui/ux') || lower.includes('uiux')) return 'design';
-      if (lower.includes('media') || lower.includes('content') || lower.includes('video')) return 'media';
-      if (lower.includes('marketing') || lower.includes('branding') || lower.includes('growth')) return 'marketing';
-      if (lower.includes('policy') || lower.includes('governance')) return 'policy';
-      if (lower.includes('law') || lower.includes('justice') || lower.includes('legal')) return 'law';
-      if (lower.includes('health') || lower.includes('medicine') || lower.includes('medical') || lower.includes('biotech')) return 'healthcare';
-      if (lower.includes('science') || lower.includes('research')) return 'science';
-      if (lower.includes('climate') || lower.includes('sustainability') || lower.includes('environment')) return 'sustainability';
-      if (lower.includes('space') || lower.includes('aerospace') || lower.includes('astronomy')) return 'space';
-      if (lower.includes('cyber') || lower.includes('hacking') || lower.includes('security')) return 'cybersecurity';
-      if (lower.includes('gaming') || lower.includes('interactive') || lower.includes('xr') || lower.includes('esports')) return 'gaming';
-      if (lower.includes('robotics') || lower.includes('engineering')) return 'robotics';
-      if (lower.includes('international') || lower.includes('global') || lower.includes('diplomacy') || lower.includes('relations')) return 'global';
-      if (lower.includes('psychology') || lower.includes('behavior') || lower.includes('brain')) return 'psychology';
-      return lower;
+      if (lower.includes('internship')) return 'type:internship';
+      if (lower.includes('fellowship')) return 'type:fellowship';
+      if (lower.includes('conference') || lower.includes('seminar') || lower.includes('panel') || lower.includes('event')) return 'type:event';
+      if (lower.includes('hackathon')) return 'type:hackathon';
+      if (lower.includes('workshop') || lower.includes('course') || lower.includes('class')) return 'type:workshop';
+      
+      if (lower.includes('ai') || lower.includes('artificial')) return 'topic:ai';
+      if (lower.includes('coding') || lower.includes('programming') || lower.includes('software')) return 'topic:coding';
+      if (lower.includes('entrepreneurship') || lower.includes('startup')) return 'topic:startup';
+      if (lower.includes('business') || lower.includes('management') || lower.includes('strategy')) return 'topic:business';
+      if (lower.includes('finance') || lower.includes('investing')) return 'topic:finance';
+      if (lower.includes('data science') || lower.includes('analytics') || lower.includes('stats')) return 'topic:data';
+      if (lower.includes('design') || lower.includes('creativity') || lower.includes('ui/ux') || lower.includes('uiux')) return 'topic:design';
+      if (lower.includes('media') || lower.includes('content') || lower.includes('video')) return 'topic:media';
+      if (lower.includes('marketing') || lower.includes('branding') || lower.includes('growth')) return 'topic:marketing';
+      if (lower.includes('policy') || lower.includes('governance')) return 'topic:policy';
+      if (lower.includes('law') || lower.includes('justice') || lower.includes('legal')) return 'topic:law';
+      if (lower.includes('health') || lower.includes('medicine') || lower.includes('medical') || lower.includes('biotech')) return 'topic:healthcare';
+      if (lower.includes('science') || lower.includes('research')) return 'topic:science';
+      if (lower.includes('climate') || lower.includes('sustainability') || lower.includes('environment')) return 'topic:sustainability';
+      if (lower.includes('space') || lower.includes('aerospace') || lower.includes('astronomy')) return 'topic:space';
+      if (lower.includes('cyber') || lower.includes('hacking') || lower.includes('security')) return 'topic:cybersecurity';
+      if (lower.includes('gaming') || lower.includes('interactive') || lower.includes('xr') || lower.includes('esports')) return 'topic:gaming';
+      if (lower.includes('robotics') || lower.includes('engineering')) return 'topic:robotics';
+      if (lower.includes('international') || lower.includes('global') || lower.includes('diplomacy') || lower.includes('relations')) return 'topic:global';
+      if (lower.includes('psychology') || lower.includes('behavior') || lower.includes('brain')) return 'topic:psychology';
+      return 'topic:' + lower;
     };
     
     const normalizedSelected = selectedInterests.map(normalizeInterest);
-    console.log(`[FEED] Filtering candidates by selected interests:`, normalizedSelected);
+    
+    const selectedTypes = normalizedSelected.filter(ns => ns.startsWith('type:')).map(ns => ns.replace('type:', ''));
+    const selectedTopics = normalizedSelected.filter(ns => ns.startsWith('topic:')).map(ns => ns.replace('topic:', ''));
+    
+    console.log(`[FEED] Filtering candidates. Selected Types:`, selectedTypes, `| Selected Topics:`, selectedTopics);
     
     candidates = candidates.filter(c => {
       const normalizedQuestTags = c.tags.map((t: string) => t.toLowerCase());
-      return normalizedQuestTags.some((qt: string) => 
-        normalizedSelected.some(ns => qt.includes(ns) || ns.includes(qt))
-      );
+      const cType = c.lifecycle_type.toLowerCase();
+
+      if (selectedTypes.length > 0 && selectedTopics.length > 0) {
+        const matchesType = selectedTypes.some(st => cType === st);
+        const matchesTopic = selectedTopics.some(st => 
+          normalizedQuestTags.some((qt: string) => qt === st)
+        );
+        return matchesType && matchesTopic;
+      }
+      
+      if (selectedTypes.length > 0) {
+        return selectedTypes.some(st => cType === st);
+      }
+
+      if (selectedTopics.length > 0) {
+        return selectedTopics.some(st => 
+          normalizedQuestTags.some((qt: string) => qt === st)
+        );
+      }
+
+      return true;
     });
 
     candidates.forEach(c => {
       const normalizedQuestTags = c.tags.map((t: string) => t.toLowerCase());
-      const matchCount = normalizedSelected.filter(ns => 
-        normalizedQuestTags.some((qt: string) => qt.includes(ns) || ns.includes(qt))
-      ).length;
+      const matchCount = normalizedSelected.filter(ns => {
+        const cleanNs = ns.replace('type:', '').replace('topic:', '');
+        return c.lifecycle_type.toLowerCase() === cleanNs || 
+               normalizedQuestTags.some((qt: string) => qt === cleanNs);
+      }).length;
       
-      // Boost tagAffinity heavily based on match count (intersection items get highest priority)
       c.tagAffinity = (c.tagAffinity || 0) + (matchCount * 50);
     });
   }
