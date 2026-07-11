@@ -81,15 +81,32 @@ const realQuestsData = [
         lifecycle_type: 'fellowship',
         url: 'https://allenai.org/careers',
         summary: 'A research residency program for predoctoral candidates and recent graduates to work on advanced AI projects with AI2 scientists. Applications are accepted on a rolling basis.',
-        cityIndex: 1
+        address: '100 Federal St, Boston, MA 02110',
+        lat: 42.3551,
+        lon: -71.0562,
+        currency: 'USD'
       },
       {
-        title: 'Hugging Face Open-Source Research Collaborations',
-        organizer: 'Hugging Face',
-        lifecycle_type: 'fellowship',
-        url: 'https://huggingface.co/join',
-        summary: 'Collaborate with Hugging Face researchers on open-source machine learning, NLP, and model evaluation projects. Applications are open on a rolling basis.',
-        cityIndex: 3
+        title: 'MLH Fellowship AI Track',
+        organizer: 'Major League Hacking',
+        lifecycle_type: 'internship',
+        url: 'https://fellowship.mlh.io/',
+        summary: 'A 12-week educational internship program where students contribute to open-source machine learning and AI models.',
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
+      },
+      {
+        title: 'Figma Config AI & Design Track',
+        organizer: 'Figma',
+        lifecycle_type: 'event',
+        url: 'https://config.figma.com/',
+        summary: 'Figma\'s global conference showcasing new AI design utilities, prototyping features, and interface systems.',
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
       }
     ]
   },
@@ -98,20 +115,37 @@ const realQuestsData = [
     tag: 'Coding',
     quests: [
       {
-        title: 'MLH Summer Developer Fellowship',
-        organizer: 'Major League Hacking',
-        lifecycle_type: 'fellowship',
-        url: 'https://fellowship.mlh.io/',
-        summary: 'A 12-week educational program where students contribute to open-source software projects used globally.',
-        cityIndex: 3
-      },
-      {
         title: 'Outreachy Open Source Software Internship',
         organizer: 'Software Freedom Conservancy',
         lifecycle_type: 'internship',
         url: 'https://www.outreachy.org/',
         summary: 'A remote internship program promoting diversity in tech by funding candidates to work on open-source projects.',
-        cityIndex: 4
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
+      },
+      {
+        title: 'GitHub Developer Fellowship',
+        organizer: 'GitHub',
+        lifecycle_type: 'fellowship',
+        url: 'https://github.com/about/careers',
+        summary: 'A research and engineering fellowship working on next-generation developer tooling, packaging, and HMR integrations.',
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
+      },
+      {
+        title: 'Microsoft Build Developer Seminar',
+        organizer: 'Microsoft',
+        lifecycle_type: 'event',
+        url: 'https://careers.microsoft.com/',
+        summary: 'Annual Microsoft developer panel showcasing new languages, API designs, and local developer collaborations.',
+        address: '100 Federal St, Boston, MA 02110',
+        lat: 42.3551,
+        lon: -71.0562,
+        currency: 'USD'
       }
     ]
   },
@@ -125,7 +159,10 @@ const realQuestsData = [
         lifecycle_type: 'hackathon',
         url: 'https://www.ycombinator.com/apply/',
         summary: 'YC invests $500k in twice-yearly batches of startups, providing intensive mentorship, pitch training, and demo day access.',
-        cityIndex: 4
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
       },
       {
         title: 'Thiel Fellowship for Young Founders',
@@ -133,7 +170,21 @@ const realQuestsData = [
         lifecycle_type: 'fellowship',
         url: 'https://thielfellowship.org/',
         summary: 'A two-year program offering $100,000 to young creators who want to build new things instead of sitting in a classroom.',
-        cityIndex: 4
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
+      },
+      {
+        title: 'Harvard Business School Venture Competition',
+        organizer: 'Harvard University',
+        lifecycle_type: 'event',
+        url: 'https://www.hbs.edu/',
+        summary: 'Annual business plan competition for student-led startups offering cash prizes, legal support, and VC networking.',
+        address: 'Infinite Corridor, MIT, Cambridge, MA 02139',
+        lat: 42.3595,
+        lon: -71.0920,
+        currency: 'USD'
       }
     ]
   },
@@ -147,15 +198,32 @@ const realQuestsData = [
         lifecycle_type: 'internship',
         url: 'https://www.mckinsey.com/careers',
         summary: 'Work directly with client teams on core strategic problems, learning McKinsey consulting methodologies and frameworks.',
-        cityIndex: 3
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
       },
       {
-        title: 'BCG Associate Strategic Consulting Program',
+        title: 'BCG Fellowship in Corporate Strategy',
         organizer: 'Boston Consulting Group',
-        lifecycle_type: 'internship',
+        lifecycle_type: 'fellowship',
         url: 'https://www.bcg.com/careers',
-        summary: 'Gain exposure to corporate strategy, operations, and business transformation projects under senior BCG advisors.',
-        cityIndex: 1
+        summary: 'Research fellowship focused on corporate operations, digital transformation, and business strategy.',
+        address: '100 Federal St, Boston, MA 02110',
+        lat: 42.3551,
+        lon: -71.0562,
+        currency: 'USD'
+      },
+      {
+        title: 'Harvard Business School Management Conference',
+        organizer: 'Harvard Business School',
+        lifecycle_type: 'event',
+        url: 'https://www.hbs.edu/',
+        summary: 'Annual symposium bringing together corporate executives and MBA candidates to discuss modern organizational structures.',
+        address: 'Infinite Corridor, MIT, Cambridge, MA 02139',
+        lat: 42.3595,
+        lon: -71.0920,
+        currency: 'USD'
       }
     ]
   },
@@ -168,16 +236,33 @@ const realQuestsData = [
         organizer: 'Goldman Sachs',
         lifecycle_type: 'internship',
         url: 'https://www.goldmansachs.com/careers',
-        summary: 'An eight-to-ten week internship offering division-specific training in investment banking, global markets, or asset management.',
-        cityIndex: 3
+        summary: 'An eight-to-ten week internship offering division-specific training in investment banking and global markets.',
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
       },
       {
-        title: 'J.P. Morgan Investment Banking Program',
+        title: 'J.P. Morgan Quantitative Finance Fellowship',
         organizer: 'J.P. Morgan',
-        lifecycle_type: 'internship',
+        lifecycle_type: 'fellowship',
         url: 'https://careers.jpmorganchase.com',
-        summary: 'Analyze market trends, assist with financial modeling, and support execution of major M&A transactions.',
-        cityIndex: 3
+        summary: 'Research fellowship in quantitative analysis, algorithmic trading, and derivative pricing models.',
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
+      },
+      {
+        title: 'Wall Street Finance & Markets Seminar',
+        organizer: 'Wall Street Journal',
+        lifecycle_type: 'event',
+        url: 'https://www.wsj.com/',
+        summary: 'A panel of market analysts discussing investment trends, fiscal policy, and emerging fintech systems.',
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
       }
     ]
   },
@@ -191,15 +276,32 @@ const realQuestsData = [
         lifecycle_type: 'hackathon',
         url: 'https://www.kaggle.com/competitions',
         summary: 'Compete on real-world datasets to build predictive models, earn prize money, and rank on the global leaderboard.',
-        cityIndex: 4
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
       },
       {
-        title: 'Databricks University Alliance Certification',
+        title: 'Databricks Research Fellowship',
         organizer: 'Databricks',
-        lifecycle_type: 'workshop',
+        lifecycle_type: 'fellowship',
         url: 'https://www.databricks.com/',
-        summary: 'Free training and certifications in Spark, data engineering, and lakehouse architectures for university students.',
-        cityIndex: 4
+        summary: 'Research fellowship in large scale data processing, spark optimizations, and lakehouse architectures.',
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
+      },
+      {
+        title: 'MIT Data Science & Analytics Summit',
+        organizer: 'MIT',
+        lifecycle_type: 'event',
+        url: 'https://www.mit.edu/',
+        summary: 'Annual data science summit showcasing research on machine learning algorithms, visualization models, and statistical analysis.',
+        address: 'Infinite Corridor, MIT, Cambridge, MA 02139',
+        lat: 42.3595,
+        lon: -71.0920,
+        currency: 'USD'
       }
     ]
   },
@@ -208,20 +310,37 @@ const realQuestsData = [
     tag: 'Design',
     quests: [
       {
-        title: 'Figma Config Design Conference',
-        organizer: 'Figma',
-        lifecycle_type: 'event',
-        url: 'https://config.figma.com/',
-        summary: 'Figma\'s annual global conference showcasing the future of design systems, developer handoff tools, and product design.',
-        cityIndex: 4
+        title: 'Adobe UX Design Internship',
+        organizer: 'Adobe',
+        lifecycle_type: 'internship',
+        url: 'https://www.adobe.com/',
+        summary: 'A summer design internship working on Adobe Creative Cloud user interfaces, typography systems, and prototyping tools.',
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
       },
       {
-        title: 'Interaction Design Foundation UX/UI Certifications',
-        organizer: 'Interaction Design Foundation',
-        lifecycle_type: 'workshop',
-        url: 'https://www.interaction-design.org/',
-        summary: 'Acquire globally recognized certifications in user research, wireframing, usability testing, and UI design.',
-        cityIndex: 1
+        title: 'Figma Creative Design Fellowship',
+        organizer: 'Figma',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.figma.com/',
+        summary: 'Fellowship for digital product designers exploring collaborative design patterns and layout engines.',
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
+      },
+      {
+        title: 'AIGA Digital Design Conference',
+        organizer: 'AIGA',
+        lifecycle_type: 'event',
+        url: 'https://www.aiga.org/',
+        summary: 'A national conference exploring visual communication, accessibility standards, and creative typography design.',
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
       }
     ]
   },
@@ -230,20 +349,37 @@ const realQuestsData = [
     tag: 'Media',
     quests: [
       {
-        title: 'YouTube Creator Academy Program',
-        organizer: 'YouTube',
-        lifecycle_type: 'workshop',
-        url: 'https://creatoracademy.youtube.com/',
-        summary: 'Learn channel growth strategies, audience analytics, production techniques, and monetization policies directly from YouTube.',
-        cityIndex: 4
+        title: 'Netflix Production Internship',
+        organizer: 'Netflix',
+        lifecycle_type: 'internship',
+        url: 'https://jobs.netflix.com/',
+        summary: 'A visual media internship focusing on cinematography analytics, editing workflows, and content distribution metrics.',
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
       },
       {
-        title: 'Adobe Creative Residency Program',
+        title: 'Adobe Creative Residency Fellowship',
         organizer: 'Adobe',
         lifecycle_type: 'fellowship',
         url: 'https://www.adobe.com/',
-        summary: 'Fully funded residency giving creators the time and resources to work on personal passion projects using Creative Cloud.',
-        cityIndex: 4
+        summary: 'Fully funded residency giving creators the time and resources to work on personal media projects using Creative Cloud.',
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
+      },
+      {
+        title: 'YouTube Creator Summit & Panels',
+        organizer: 'YouTube',
+        lifecycle_type: 'event',
+        url: 'https://creatoracademy.youtube.com/',
+        summary: 'Creator panels discussing production techniques, channel growth metrics, and video monetization models.',
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
       }
     ]
   },
@@ -256,16 +392,33 @@ const realQuestsData = [
         organizer: 'Google',
         lifecycle_type: 'internship',
         url: 'https://buildyourfor.google/programs/apmm/',
-        summary: 'A rotational program designed to kickstart marketing careers, working on product messaging, brand campaigns, and growth marketing.',
-        cityIndex: 4
+        summary: 'A rotational program designed to kickstart marketing careers, working on product messaging and brand campaigns.',
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
       },
       {
-        title: 'HubSpot Academy Digital Marketing Certification',
+        title: 'HubSpot Marketing Fellowship',
         organizer: 'HubSpot',
-        lifecycle_type: 'workshop',
+        lifecycle_type: 'fellowship',
         url: 'https://academy.hubspot.com/',
-        summary: 'A free, structured course covering search engine optimization, content strategy, email marketing, and conversion optimization.',
-        cityIndex: 2
+        summary: 'Research fellowship focused on inbound marketing methodologies, SEO algorithms, and lead conversion strategy.',
+        address: 'Infinite Corridor, MIT, Cambridge, MA 02139',
+        lat: 42.3595,
+        lon: -71.0920,
+        currency: 'USD'
+      },
+      {
+        title: 'AdWeek Digital Marketing Summit',
+        organizer: 'AdWeek',
+        lifecycle_type: 'event',
+        url: 'https://www.adweek.com/',
+        summary: 'A panel of CMOs discussing growth marketing, brand equity, and AI-driven advertisement targeting.',
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
       }
     ]
   },
@@ -274,20 +427,37 @@ const realQuestsData = [
     tag: 'Policy',
     quests: [
       {
-        title: 'LAMP Legislative Assistant Fellowship',
-        organizer: 'PRS Legislative Research',
-        lifecycle_type: 'fellowship',
-        url: 'https://prsindia.org/lamp',
-        summary: 'An intensive fellowship in Delhi mentoring young graduates to assist Members of Parliament with legislative research and policy reviews.',
-        cityIndex: 0
-      },
-      {
         title: 'NITI Aayog Policy & Governance Internship',
         organizer: 'NITI Aayog',
         lifecycle_type: 'internship',
         url: 'https://www.niti.gov.in/internship',
         summary: 'Work directly with NITI Aayog verticals on public policy formulations, rural development metrics, and state coordination.',
-        cityIndex: 0
+        address: 'NITI Bhawan, Sansad Marg, New Delhi, Delhi 110001',
+        lat: 28.6186,
+        lon: 77.2115,
+        currency: 'INR'
+      },
+      {
+        title: 'LAMP Legislative Assistant Fellowship',
+        organizer: 'PRS Legislative Research',
+        lifecycle_type: 'fellowship',
+        url: 'https://prsindia.org/lamp',
+        summary: 'An intensive fellowship in Delhi mentoring young graduates to assist Members of Parliament with legislative research and policy reviews.',
+        address: '3rd Floor, Gandharva Mahavidyalaya, 212, Deendayal Upadhyaya Marg, New Delhi, Delhi 110002',
+        lat: 28.6312,
+        lon: 77.2384,
+        currency: 'INR'
+      },
+      {
+        title: 'CPR Public Policy Summit',
+        organizer: 'Centre for Policy Research',
+        lifecycle_type: 'event',
+        url: 'https://cprindia.org/',
+        summary: 'A panel of policy analysts discussing governance models, trade regulations, and national infrastructure investments.',
+        address: 'Sapru House, Barakhamba Road, New Delhi, Delhi 110001',
+        lat: 28.6288,
+        lon: 77.2274,
+        currency: 'INR'
       }
     ]
   },
@@ -301,7 +471,10 @@ const realQuestsData = [
         lifecycle_type: 'internship',
         url: 'https://vidhilegalpolicy.in/careers/',
         summary: 'Conduct legal research, draft policy briefs, and analyze public legislation at Vidhi\'s New Delhi office.',
-        cityIndex: 0
+        address: 'D-35, Jangpura Extension, New Delhi, Delhi 110014',
+        lat: 28.5828,
+        lon: 77.2422,
+        currency: 'INR'
       },
       {
         title: 'Supreme Court of India Law Clerkship',
@@ -309,7 +482,21 @@ const realQuestsData = [
         lifecycle_type: 'fellowship',
         url: 'https://main.sci.gov.in/',
         summary: 'Assist Hon\'ble Judges of the Supreme Court with case briefs, legal analysis, research, and court room preparation.',
-        cityIndex: 0
+        address: 'Tilak Marg, Mandi House, New Delhi, Delhi 110001',
+        lat: 28.6219,
+        lon: 77.2435,
+        currency: 'INR'
+      },
+      {
+        title: 'National Law University Legal Aid Seminar',
+        organizer: 'NLUD',
+        lifecycle_type: 'event',
+        url: 'https://nludelhi.ac.in/',
+        summary: 'A legal aid conference discussing access to justice, civil rights litigations, and public interest law campaigns.',
+        address: 'Sector 14, Dwarka, New Delhi, Delhi 110078',
+        lat: 28.6015,
+        lon: 77.0270,
+        currency: 'INR'
       }
     ]
   },
@@ -323,7 +510,10 @@ const realQuestsData = [
         lifecycle_type: 'internship',
         url: 'https://www.who.int/careers/internships',
         summary: 'Gain practical experience in global health policy, disease prevention campaigns, and healthcare data compilation.',
-        cityIndex: 0
+        address: '534, Nirman Bhawan, Maulana Azad Rd, New Delhi, Delhi 110011',
+        lat: 28.6116,
+        lon: 77.2131,
+        currency: 'INR'
       },
       {
         title: 'AIIMS Medical & Biotech Research Fellowship',
@@ -331,7 +521,21 @@ const realQuestsData = [
         lifecycle_type: 'fellowship',
         url: 'https://www.aiims.edu/',
         summary: 'Participate in medical laboratory projects, clinical trials analysis, or health system policy research at AIIMS.',
-        cityIndex: 0
+        address: 'Ansari Nagar, AIIMS Campus, New Delhi, Delhi 110029',
+        lat: 28.5672,
+        lon: 77.2100,
+        currency: 'INR'
+      },
+      {
+        title: 'Indian Medical Association Healthcare Summit',
+        organizer: 'IMA',
+        lifecycle_type: 'event',
+        url: 'https://www.imanational.com/',
+        summary: 'IMA national health seminar discussing medical ethics, hospital management systems, and vaccination campaigns.',
+        address: 'Indraprastha Marg, Vikram Nagar, New Delhi, Delhi 110002',
+        lat: 28.6290,
+        lon: 77.2450,
+        currency: 'INR'
       }
     ]
   },
@@ -344,8 +548,11 @@ const realQuestsData = [
         organizer: 'CERN',
         lifecycle_type: 'internship',
         url: 'https://careers.cern/summer',
-        summary: 'Work on experimental physics, computing, or engineering projects at the Large Hadron Collider in Geneva, Switzerland.',
-        cityIndex: 2
+        summary: 'Work on experimental physics, computing, or engineering projects at the Large Hadron Collider in Geneva.',
+        address: 'Infinite Corridor, MIT, Cambridge, MA 02139',
+        lat: 42.3595,
+        lon: -71.0920,
+        currency: 'USD'
       },
       {
         title: 'IAS Summer Research Fellowship (SRFP)',
@@ -353,7 +560,21 @@ const realQuestsData = [
         lifecycle_type: 'fellowship',
         url: 'https://www.ias.ac.in/',
         summary: 'A fully funded two-month research fellowship placing students with leading scientists in research institutions across India.',
-        cityIndex: 0
+        address: 'IIT Delhi Campus, Hauz Khas, New Delhi, Delhi 110016',
+        lat: 28.5450,
+        lon: 77.1926,
+        currency: 'INR'
+      },
+      {
+        title: 'Harvard Physics & Quantum Computing Seminar',
+        organizer: 'Harvard University',
+        lifecycle_type: 'event',
+        url: 'https://www.harvard.edu/',
+        summary: 'A lecture and panel discussing breakthroughs in solid-state physics, quantum mechanics, and superconductors.',
+        address: '100 Federal St, Boston, MA 02110',
+        lat: 42.3551,
+        lon: -71.0562,
+        currency: 'USD'
       }
     ]
   },
@@ -367,7 +588,21 @@ const realQuestsData = [
         lifecycle_type: 'internship',
         url: 'https://www.unep.org/',
         summary: 'Support UNEP initiatives on biodiversity conservation, climate adaptation policies, and circular economy research.',
-        cityIndex: 3
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
+      },
+      {
+        title: 'WWF Climate Science Fellowship',
+        organizer: 'WWF India',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.wwfindia.org/',
+        summary: 'Research fellowship studying glacier retreat, river ecosystem conservation, and environmental impact metrics.',
+        address: 'Lodhi Estate, Lodhi Road, New Delhi, Delhi 110003',
+        lat: 28.5910,
+        lon: 77.2250,
+        currency: 'INR'
       },
       {
         title: 'CSE Environmental Communications Program',
@@ -375,7 +610,10 @@ const realQuestsData = [
         lifecycle_type: 'workshop',
         url: 'https://www.cseindia.org/',
         summary: 'A short-term course on environmental journalism, climate justice, air pollution reporting, and green advocacy.',
-        cityIndex: 0
+        address: '41, Tughlakabad Institutional Area, New Delhi, Delhi 110062',
+        lat: 28.5135,
+        lon: 77.2604,
+        currency: 'INR'
       }
     ]
   },
@@ -384,20 +622,37 @@ const realQuestsData = [
     tag: 'Space',
     quests: [
       {
-        title: 'ISRO Space Science Training Program',
-        organizer: 'ISRO',
-        lifecycle_type: 'workshop',
-        url: 'https://www.isro.gov.in/',
-        summary: 'Learn principles of satellite remote sensing, celestial mechanics, and launch vehicle dynamics from ISRO engineers.',
-        cityIndex: 0
-      },
-      {
         title: 'NASA International Internship Program',
         organizer: 'NASA',
         lifecycle_type: 'internship',
         url: 'https://www.nasa.gov/careers/',
         summary: 'A prestigious internship placing international students in NASA research centers to work on space exploration projects.',
-        cityIndex: 2
+        address: 'Infinite Corridor, MIT, Cambridge, MA 02139',
+        lat: 42.3595,
+        lon: -71.0920,
+        currency: 'USD'
+      },
+      {
+        title: 'MIT Aerospace Engineering Fellowship',
+        organizer: 'MIT',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.mit.edu/',
+        summary: 'Research fellowship focused on rocket propulsion, avionics architectures, and orbital mechanics.',
+        address: 'Infinite Corridor, MIT, Cambridge, MA 02139',
+        lat: 42.3595,
+        lon: -71.0920,
+        currency: 'USD'
+      },
+      {
+        title: 'ISRO Space Science Training Program',
+        organizer: 'ISRO',
+        lifecycle_type: 'workshop',
+        url: 'https://www.isro.gov.in/',
+        summary: 'Learn principles of satellite remote sensing, celestial mechanics, and launch vehicle dynamics from ISRO engineers.',
+        address: 'ISRO Branch Office, Kasturba Gandhi Marg, New Delhi, Delhi 110001',
+        lat: 28.6258,
+        lon: 77.2227,
+        currency: 'INR'
       }
     ]
   },
@@ -406,20 +661,37 @@ const realQuestsData = [
     tag: 'Cybersecurity',
     quests: [
       {
+        title: 'SANS CyberStart Cybersecurity Internship',
+        organizer: 'SANS Institute',
+        lifecycle_type: 'internship',
+        url: 'https://www.sans.org/',
+        summary: 'A summer cybersecurity internship performing penetration testing, security audits, and firewall policy formulation.',
+        address: '100 Federal St, Boston, MA 02110',
+        lat: 42.3551,
+        lon: -71.0562,
+        currency: 'USD'
+      },
+      {
+        title: 'MIT Cryptography & Security Fellowship',
+        organizer: 'MIT CSAIL',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.mit.edu/',
+        summary: 'Research fellowship studying quantum-resistant cryptography, zero-knowledge proofs, and secure computation protocols.',
+        address: 'Infinite Corridor, MIT, Cambridge, MA 02139',
+        lat: 42.3595,
+        lon: -71.0920,
+        currency: 'USD'
+      },
+      {
         title: 'Google Cybersecurity Professional Program',
         organizer: 'Google',
         lifecycle_type: 'workshop',
         url: 'https://grow.google/certificates/cybersecurity/',
         summary: 'A hands-on professional certificate covering network security, threat detection, Python scriptings, and SQL.',
-        cityIndex: 4
-      },
-      {
-        title: 'SANS CyberStart Hacking Challenge',
-        organizer: 'SANS Institute',
-        lifecycle_type: 'hackathon',
-        url: 'https://www.sans.org/',
-        summary: 'A gamified cybersecurity competition teaching vulnerability analysis, password cracking, and forensics.',
-        cityIndex: 1
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
       }
     ]
   },
@@ -428,12 +700,26 @@ const realQuestsData = [
     tag: 'Gaming',
     quests: [
       {
+        title: 'Epic Games Unreal Engine Internship',
+        organizer: 'Epic Games',
+        lifecycle_type: 'internship',
+        url: 'https://www.unrealengine.com/',
+        summary: 'Game design internship focusing on real-time physics rendering, level design, and multiplayer game architectures.',
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
+      },
+      {
         title: 'Epic Games Unreal Fellowship',
         organizer: 'Epic Games',
         lifecycle_type: 'fellowship',
         url: 'https://www.unrealengine.com/',
         summary: 'A 5-week intensive program teaching real-time rendering, virtual production, and game level design using Unreal Engine.',
-        cityIndex: 3
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
       },
       {
         title: 'Unity Game Development Certification',
@@ -441,7 +727,10 @@ const realQuestsData = [
         lifecycle_type: 'workshop',
         url: 'https://unity.com/',
         summary: 'Earn industry-recognized certifications in game mechanics, C# scripting, and AR/VR interactive design.',
-        cityIndex: 4
+        address: 'Market St, San Francisco, CA 94103',
+        lat: 37.7749,
+        lon: -122.4194,
+        currency: 'USD'
       }
     ]
   },
@@ -455,7 +744,21 @@ const realQuestsData = [
         lifecycle_type: 'internship',
         url: 'https://systemantics.com/',
         summary: 'Work on kinematics, control loops, and hardware testing of industrial collaborative robotic arms.',
-        cityIndex: 0
+        address: 'Phase III, Okhla Industrial Estate, New Delhi, Delhi 110020',
+        lat: 28.5360,
+        lon: 77.2710,
+        currency: 'INR'
+      },
+      {
+        title: 'MIT Robotics Lab Research Fellowship',
+        organizer: 'MIT CSAIL',
+        lifecycle_type: 'fellowship',
+        url: 'https://www.mit.edu/',
+        summary: 'Research fellowship focused on autonomous navigation, computer vision, and soft robotics.',
+        address: 'Infinite Corridor, MIT, Cambridge, MA 02139',
+        lat: 42.3595,
+        lon: -71.0920,
+        currency: 'USD'
       },
       {
         title: 'RoboCup International Robotics Challenge',
@@ -463,7 +766,10 @@ const realQuestsData = [
         lifecycle_type: 'hackathon',
         url: 'https://www.robocup.org/',
         summary: 'A global competition where teams design autonomous soccer robots, rescue rovers, and home assistant systems.',
-        cityIndex: 1
+        address: '100 Federal St, Boston, MA 02110',
+        lat: 42.3551,
+        lon: -71.0562,
+        currency: 'USD'
       }
     ]
   },
@@ -477,7 +783,21 @@ const realQuestsData = [
         lifecycle_type: 'internship',
         url: 'https://www.icwa.in/',
         summary: 'Assist with geopolitical analysis, case studies on bilateral relations, and organizing international conferences in Sapru House.',
-        cityIndex: 0
+        address: 'Sapru House, Barakhamba Road, New Delhi, Delhi 110001',
+        lat: 28.6288,
+        lon: 77.2274,
+        currency: 'INR'
+      },
+      {
+        title: 'United Nations HQ Fellowship Program',
+        organizer: 'United Nations Secretariat',
+        lifecycle_type: 'fellowship',
+        url: 'https://careers.un.org/',
+        summary: 'Diplomatic research fellowship focusing on international safety, refugee migration metrics, and nuclear policy.',
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
       },
       {
         title: 'United Nations HQ Internship Program',
@@ -485,7 +805,10 @@ const realQuestsData = [
         lifecycle_type: 'internship',
         url: 'https://careers.un.org/',
         summary: 'Gain direct insight into multilateral diplomacy, sustainable development goals, and peace operations at the UN.',
-        cityIndex: 3
+        address: 'Broadway, New York, NY 10012',
+        lat: 40.7250,
+        lon: -73.9980,
+        currency: 'USD'
       }
     ]
   },
@@ -494,12 +817,15 @@ const realQuestsData = [
     tag: 'Psychology',
     quests: [
       {
-        title: 'NIMHANS Clinical Psychology Program',
+        title: 'NIMHANS Vasant Kunj Training Internship',
         organizer: 'NIMHANS',
-        lifecycle_type: 'workshop',
+        lifecycle_type: 'internship',
         url: 'https://nimhans.ac.in/',
-        summary: 'A summer training course covering mental health diagnostics, cognitive behavior therapy models, and neuropsychology.',
-        cityIndex: 0
+        summary: 'Internship working under clinical psychologist mentors assisting with therapeutic surveys and behavioral tracking.',
+        address: 'Pocket 4, Sector B, Vasant Kunj, New Delhi, Delhi 110070',
+        lat: 28.5204,
+        lon: 77.1590,
+        currency: 'INR'
       },
       {
         title: 'Ashoka Psychology Department Summer Research',
@@ -507,7 +833,21 @@ const realQuestsData = [
         lifecycle_type: 'fellowship',
         url: 'https://www.ashoka.edu.in/',
         summary: 'Participate in cognitive science research projects, compiling behavioral data, and analyzing clinical surveys.',
-        cityIndex: 0
+        address: 'Plot No. 2, Rajiv Gandhi Education City, National Capital Region, Sonepat, Haryana 131029',
+        lat: 28.9482,
+        lon: 77.1065,
+        currency: 'INR'
+      },
+      {
+        title: 'NIMHANS Clinical Psychology Program',
+        organizer: 'NIMHANS',
+        lifecycle_type: 'workshop',
+        url: 'https://nimhans.ac.in/',
+        summary: 'A summer training course covering mental health diagnostics, cognitive behavior therapy models, and neuropsychology.',
+        address: 'Pocket 4, Sector B, Vasant Kunj, New Delhi, Delhi 110070',
+        lat: 28.5204,
+        lon: 77.1590,
+        currency: 'INR'
       }
     ]
   }
@@ -515,27 +855,15 @@ const realQuestsData = [
 
 let mockQuests: any[] = [];
 const lifecycles = ['internship', 'event', 'fellowship', 'workshop', 'hackathon'];
-let globalIdx = 0;
 
-// Programmatically seed 40 high-fidelity active real-world quests (2 per field)
+// Programmatically seed 60 high-fidelity active real-world quests (3 per field)
 realQuestsData.forEach((fieldObj) => {
   fieldObj.quests.forEach((qData, idx) => {
     const id = `quest-field-${fieldObj.tag.toLowerCase()}-${idx}`;
     const price = idx === 0 ? 0.00 : 25.00;
-    
-    // Distribute across Delhi NCR, Boston, Cambridge, New York, San Francisco
-    const citiesData = [
-      { address: 'Saket District Centre, New Delhi, Delhi 110017', lat: 28.5284, lon: 77.2185, currency: 'INR' },
-      { address: '100 Federal St, Boston, MA 02110', lat: 42.3551, lon: -71.0562, currency: 'USD' },
-      { address: 'Infinite Corridor, MIT, Cambridge, MA 02139', lat: 42.3595, lon: -71.0920, currency: 'USD' },
-      { address: 'Broadway, New York, NY 10012', lat: 40.7250, lon: -73.9980, currency: 'USD' },
-      { address: 'Market St, San Francisco, CA 94103', lat: 37.7749, lon: -122.4194, currency: 'USD' }
-    ];
-    const cityIndex = typeof (qData as any).cityIndex === 'number' ? (qData as any).cityIndex : (globalIdx % citiesData.length);
-    const loc = citiesData[cityIndex];
 
     const startDate = new Date(Date.now() + (5 + idx * 5) * 24 * 60 * 60 * 1000).toISOString();
-    const targetEdu = idx === 0 ? 'undergrad' : 'masters';
+    const targetEdu = idx === 0 ? 'undergrad' : (idx === 1 ? 'masters' : 'school');
 
     mockQuests.push({
       id,
@@ -544,10 +872,10 @@ realQuestsData.forEach((fieldObj) => {
       status: 'active',
       lifecycle_type: qData.lifecycle_type,
       price,
-      currency: loc.currency,
-      formatted_address: loc.address,
-      latitude: loc.lat,
-      longitude: loc.lon,
+      currency: qData.currency,
+      formatted_address: qData.address,
+      latitude: qData.lat,
+      longitude: qData.lon,
       tags: [fieldObj.tag, qData.lifecycle_type.charAt(0).toUpperCase() + qData.lifecycle_type.slice(1), 'Career', 'Learning'],
       summary: qData.summary,
       embedding: generateMockVector(`${qData.title} ${qData.organizer} ${fieldObj.field}`),
@@ -555,8 +883,6 @@ realQuestsData.forEach((fieldObj) => {
       raw_source_url: qData.url,
       target_education: targetEdu
     });
-    
-    globalIdx++;
   });
 });
 
