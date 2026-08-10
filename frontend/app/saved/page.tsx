@@ -25,13 +25,13 @@ const getTagBadgeStyle = (tag: string) => {
   } else if (t.includes('fellow')) {
     return 'bg-amber-500/10 text-amber-400 border border-amber-500/20';
   } else if (t.includes('humanities') || t.includes('art') || t.includes('heritage') || t.includes('design') || t.includes('uiux') || t.includes('creative')) {
-    return 'bg-rose-500/10 text-rose-400 border border-rose-500/20';
+    return 'bg-violet-500/10 text-amber-400 border border-violet-500/20';
   } else if (t.includes('quantum') || t.includes('physic') || t.includes('ai') || t.includes('comput') || t.includes('algorithm') || t.includes('learning')) {
     return 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20';
   } else if (t.includes('outdoor') || t.includes('sailing') || t.includes('adventure') || t.includes('sport') || t.includes('environment')) {
     return 'bg-orange-500/10 text-orange-400 border border-orange-500/20';
   }
-  return 'bg-slate-950 text-slate-400 border border-slate-800/80';
+  return 'bg-[#170F26] text-slate-400 border border-[#382C52]/80';
 };
 
 export default function SavedQuests() {
@@ -52,23 +52,23 @@ export default function SavedQuests() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white flex flex-col items-center relative overflow-hidden p-4">
+    <div className="min-h-screen bg-[#170F26] text-white flex flex-col items-center relative overflow-hidden p-4">
       {/* Background gradients */}
-      <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] bg-rose-600/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] bg-violet-600/10 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] bg-violet-600/20 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] bg-amber-500/15 rounded-full blur-[130px] pointer-events-none" />
 
       {/* Header bar */}
       <header className="w-full max-w-2xl flex justify-between items-center py-4 relative z-10 border-b border-slate-900 mb-6">
         <button
           onClick={() => router.push('/discover')}
-          className="p-2.5 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl transition text-slate-300 flex items-center gap-2 text-xs font-semibold"
+          className="p-2.5 bg-[#1F1636] border border-[#382C52] hover:border-[#4A3D6B] rounded-xl transition text-slate-300 flex items-center gap-2 text-xs font-semibold"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Discover
         </button>
         
         <div className="flex items-center gap-1.5">
-          <Bookmark className="w-5 h-5 text-rose-400" />
+          <Bookmark className="w-5 h-5 text-amber-400" />
           <span className="font-extrabold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">
             Saved Quests
           </span>
@@ -82,7 +82,7 @@ export default function SavedQuests() {
             {savedQuests.map((quest) => (
               <div
                 key={quest.id}
-                className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-5 shadow-lg flex flex-col justify-between hover:border-slate-700/80 transition duration-200"
+                className="bg-[#1F1636]/60 backdrop-blur-xl border border-[#382C52] rounded-2xl p-5 shadow-lg flex flex-col justify-between hover:border-[#4A3D6B]/80 transition duration-200"
               >
                 <div>
                   {/* Title & Action header */}
@@ -92,7 +92,7 @@ export default function SavedQuests() {
                     </h3>
                     <button
                       onClick={() => removeBookmark(quest.id)}
-                      className="p-2 bg-slate-950 border border-slate-800 hover:border-red-950 hover:text-red-400 rounded-lg text-slate-400 transition"
+                      className="p-2 bg-[#170F26] border border-[#382C52] hover:border-red-950 hover:text-red-400 rounded-lg text-slate-400 transition"
                       title="Remove Bookmark"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -105,13 +105,13 @@ export default function SavedQuests() {
                   </p>
 
                   {/* Metadata fields */}
-                  <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4 text-xs text-slate-300 bg-slate-950/40 p-3 rounded-xl border border-slate-800/40">
+                  <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4 text-xs text-slate-300 bg-[#170F26]/40 p-3 rounded-xl border border-[#382C52]/40">
                     <div className="flex items-center gap-1.5">
-                      <DollarSign className="w-4 h-4 text-rose-400" />
+                      <DollarSign className="w-4 h-4 text-amber-400" />
                       <span>{quest.price === 0 ? 'Free' : `${quest.currency === 'INR' ? '₹' : '$'}${quest.price}`}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4 text-rose-400" />
+                      <MapPin className="w-4 h-4 text-amber-400" />
                       <span className="truncate max-w-[150px]">{quest.formatted_address}</span>
                     </div>
                     <div className="flex items-center gap-1.5 text-emerald-400">
@@ -127,7 +127,7 @@ export default function SavedQuests() {
                 </div>
 
                 {/* Footer tags and Link action */}
-                <div className="flex justify-between items-center mt-2 border-t border-slate-800/60 pt-4">
+                <div className="flex justify-between items-center mt-2 border-t border-[#382C52]/60 pt-4">
                   <div className="flex flex-wrap gap-1">
                     {quest.tags.slice(0, 3).map((tag, idx) => (
                       <span key={idx} className={`text-[10px] px-2 py-0.5 rounded ${getTagBadgeStyle(tag)}`}>
@@ -142,7 +142,7 @@ export default function SavedQuests() {
                       href={quest.raw_source_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-rose-450 hover:text-rose-400 transition"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-amber-400 hover:text-amber-400 transition"
                     >
                       Register
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -154,7 +154,7 @@ export default function SavedQuests() {
           </div>
         ) : (
           /* Empty Saved state */
-          <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-12 text-center flex flex-col justify-center items-center">
+          <div className="bg-[#1F1636]/40 border border-[#382C52] rounded-2xl p-12 text-center flex flex-col justify-center items-center">
             <Bookmark className="w-12 h-12 text-slate-600 mb-4" />
             <h3 className="text-lg font-bold mb-1">No Saved Bookmarks</h3>
             <p className="text-slate-400 text-xs max-w-xs mb-6">
@@ -162,7 +162,7 @@ export default function SavedQuests() {
             </p>
             <button
               onClick={() => router.push('/discover')}
-              className="bg-gradient-to-r from-rose-500 via-pink-500 to-violet-600 hover:opacity-95 text-white text-xs font-bold py-3 px-6 rounded-xl transition duration-200"
+              className="bg-gradient-to-r from-violet-600 to-amber-400 hover:opacity-95 text-white text-xs font-bold py-3 px-6 rounded-xl transition duration-200"
             >
               Start Discovering
             </button>

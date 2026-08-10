@@ -84,19 +84,19 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white flex flex-col justify-center items-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-[#170F26] text-white flex flex-col justify-center items-center p-6 relative overflow-hidden">
       {/* Background gradients */}
-      <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] bg-rose-600/15 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] bg-violet-600/15 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] bg-violet-600/20 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] bg-amber-500/15 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="w-full max-w-lg bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 p-8 rounded-3xl shadow-2xl relative z-10">
+      <div className="w-full max-w-lg bg-[#1F1636]/60 backdrop-blur-xl border border-[#382C52]/80 p-8 rounded-3xl shadow-2xl relative z-10">
         
         {/* Title / Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center p-3 bg-gradient-to-tr from-rose-500 via-pink-500 to-violet-600 rounded-2xl shadow-lg mb-4">
+          <div className="inline-flex items-center justify-center p-3 bg-gradient-to-tr from-violet-600 to-amber-400 rounded-2xl shadow-lg mb-4">
             <Compass className="w-8 h-8 text-white animate-spin-slow" />
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-rose-400 via-pink-300 to-violet-300">
+          <h1 className="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-violet-300 via-violet-200 to-amber-300">
             SideQuestre
           </h1>
           <p className="text-slate-400 mt-2 text-sm">
@@ -112,7 +112,7 @@ export default function Onboarding() {
               type="text"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-300 text-sm focus:outline-none focus:border-rose-500 transition"
+              className="w-full bg-[#170F26] border border-[#382C52] rounded-xl px-4 py-3 text-slate-300 text-sm focus:outline-none focus:border-violet-500 transition"
               required
             />
           </div>
@@ -120,13 +120,13 @@ export default function Onboarding() {
           {/* Location City Selection */}
           <div className="space-y-2">
             <label className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-rose-400" />
+              <MapPin className="w-4 h-4 text-amber-400" />
               Where are you looking for quests?
             </label>
             <select
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-300 text-sm focus:outline-none focus:border-rose-500 transition"
+              className="w-full bg-[#170F26] border border-[#382C52] rounded-xl px-4 py-3 text-slate-300 text-sm focus:outline-none focus:border-violet-500 transition"
             >
               {cities.map((city) => (
                 <option key={city.name} value={city.name}>
@@ -139,7 +139,7 @@ export default function Onboarding() {
           {/* Highest Level of Education Selection */}
           <div className="space-y-2">
             <label className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-              <Compass className="w-4 h-4 text-rose-400" />
+              <Compass className="w-4 h-4 text-amber-400" />
               Highest Education Level
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -152,8 +152,8 @@ export default function Onboarding() {
                     onClick={() => setEducationLevel(level)}
                     className={`py-2.5 px-3 rounded-xl border text-center text-xs font-semibold transition ${
                       active
-                        ? 'bg-rose-500/10 border-rose-500 text-rose-300 shadow-lg shadow-rose-500/5'
-                        : 'bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700'
+                        ? 'bg-violet-500/10 border-violet-500 text-violet-300 shadow-lg shadow-violet-500/10'
+                        : 'bg-[#170F26] border-[#382C52] text-slate-400 hover:border-[#4A3D6B]'
                     }`}
                   >
                     {level}
@@ -167,10 +167,10 @@ export default function Onboarding() {
           <div className="space-y-2">
             <div className="flex justify-between items-center">
               <label className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                <DollarSign className="w-4 h-4 text-rose-400" />
+                <DollarSign className="w-4 h-4 text-amber-400" />
                 Maximum Budget Limit
               </label>
-              <span className="text-sm font-bold text-rose-400">
+              <span className="text-sm font-bold text-amber-400">
                 {budget === 0 ? 'Free Quests Only' : `$${budget}`}
               </span>
             </div>
@@ -181,7 +181,7 @@ export default function Onboarding() {
               step="10"
               value={budget}
               onChange={(e) => setBudget(Number(e.target.value))}
-              className="w-full accent-rose-500 h-2 bg-slate-950 rounded-lg cursor-pointer"
+              className="w-full accent-violet-500 h-2 bg-[#170F26] rounded-lg cursor-pointer"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>$0 (Free)</span>
@@ -193,10 +193,10 @@ export default function Onboarding() {
           {/* Interests selection */}
           <div className="space-y-2">
             <label className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-rose-400" />
+              <Sparkles className="w-4 h-4 text-amber-400" />
               Select Primary Interests
             </label>
-            <div className="grid grid-cols-2 gap-2 max-h-56 overflow-y-auto p-2.5 bg-slate-950 rounded-xl border border-slate-800 custom-scrollbar">
+            <div className="grid grid-cols-2 gap-2 max-h-56 overflow-y-auto p-2.5 bg-[#170F26] rounded-xl border border-[#382C52] custom-scrollbar">
               {mounted && availableInterests.map((interest) => {
                 const selected = selectedInterests.includes(interest);
                 return (
@@ -206,8 +206,8 @@ export default function Onboarding() {
                     onClick={() => toggleInterest(interest)}
                     className={`text-xs px-2.5 py-2 rounded-lg border transition duration-200 text-left truncate flex items-center gap-1.5 ${
                       selected
-                        ? 'bg-rose-500/10 border-rose-500 text-rose-300 shadow-lg shadow-rose-500/5'
-                        : 'bg-slate-900 border-slate-800 text-slate-400 hover:border-slate-700'
+                        ? 'bg-violet-500/10 border-violet-500 text-violet-300 shadow-lg shadow-violet-500/10'
+                        : 'bg-[#1F1636] border-[#382C52] text-slate-400 hover:border-[#4A3D6B]'
                     }`}
                   >
                     {interest}
@@ -220,7 +220,7 @@ export default function Onboarding() {
           {/* Submit Onboarding Button */}
           <button
             type="submit"
-            className="w-full mt-4 bg-gradient-to-r from-rose-500 via-pink-500 to-violet-600 hover:opacity-95 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-rose-500/20 transition duration-300"
+            className="w-full mt-4 bg-gradient-to-r from-violet-600 to-amber-400 hover:opacity-95 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-violet-500/25 transition duration-300"
           >
             Enter Feed Dashboard
             <ArrowRight className="w-5 h-5" />
